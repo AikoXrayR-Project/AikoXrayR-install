@@ -1,8 +1,0 @@
-version: '3'
-services: 
-  xrayr: 
-    image: crackair/xrayr:latest
-    volumes:
-      - ./config:/etc/XrayR/ # AikoCuteHotme
-    restart: always
-    network_mode: host
