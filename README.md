@@ -3,16 +3,16 @@ Một khung phụ trợ Xray có thể dễ dàng hỗ trợ nhiều bảng.
 
 Một khung công tác back-end dựa trên Xray, hỗ trợ các giao thức V2ay, Trojan, Shadowsocks, cực kỳ dễ dàng mở rộng và hỗ trợ kết nối nhiều bảng điều khiển
 
-Tìm mã nguồn tại đây: [herotbty/XrayR](https://github.com/herotbty/XrayR)
+Tìm mã nguồn tại đây: [AikoCute/XrayR](https://github.com/AikoCute/XrayR)
 
 # Hướng dẫn chi tiết
 
-[hướng dẫn](https://herotbty.gitbook.io/aikoxrayr/) < Tiếng Việt>
+[hướng dẫn](https://AikoCute.gitbook.io/aikoxrayr/) < Tiếng Việt>
 
 # Một cài đặt chính
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/herotbty/Aiko-XrayR/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/Aiko-XrayR/master/install.sh)
 ```
 # Cài đặt Docker
 
@@ -43,7 +43,7 @@ chmod +x /usr/local/bin/docker-compose
 ```
 1. tải XrayR về VPS để cài đặt
  ```
- git clone https://github.com/herotbty/XrayR-release
+ git clone https://github.com/AikoCute/XrayR-release
  ```
 2. Truy cập vào thư mục vừa tải
  ```
