@@ -12,7 +12,7 @@ Tìm mã nguồn tại đây: [AikoCute/XrayR](https://github.com/AikoCute/XrayR
 # Một cài đặt chính
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/Aiko-XrayR/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/install/install.sh)
 ```
 # Cài đặt Docker
 
