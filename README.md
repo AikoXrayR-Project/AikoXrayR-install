@@ -7,7 +7,7 @@ Tìm mã nguồn tại đây: [AikoCute/XrayR](https://github.com/AikoCute/XrayR
 
 # Hướng dẫn chi tiết
 
-[hướng dẫn](https://AikoCute.gitbook.io/aikoxrayr/) < Tiếng Việt>
+[hướng dẫn](https://xrayr.aikocute.com) < Tiếng Việt>
 
 # Một cài đặt chính
 
