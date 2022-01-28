@@ -108,7 +108,7 @@ update() {
 #        fi
 #        return 0
 #    fi
-    bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/Aiko-XrayR/install/install.sh) $version
+    bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/install/install.sh) $version
     if [[ $? == 0 ]]; then
         echo -e "${green}Cập nhật hoàn tất, XrayR đã được khởi động lại tự động, vui lòng sử dụng nhật ký XrayR để xem nhật ký chạy${plain}"
         exit
@@ -270,7 +270,7 @@ install_bbr() {
 }
 
 update_shell() {
-    wget -O /usr/bin/XrayR -N --no-check-certificate https://raw.githubusercontent.com/AikoCute/Aiko-XrayR/data/XrayR.sh
+    wget -O /usr/bin/XrayR -N --no-check-certificate https://raw.githubusercontent.com/AikoCute/data/XrayR.sh
     if [[ $? != 0 ]]; then
         echo ""
         echo -e "${red}Không tải được script xuống, vui lòng kiểm tra xem máy có thể kết nối với Github không${plain}"
@@ -367,7 +367,7 @@ show_XrayR_version() {
 
 show_usage() {
     echo "XrayR Cách sử dụng tập lệnh quản lý (tương thích với thực thi xrayr, không phân biệt chữ hoa chữ thường): "
-    echo "Aiko-XrayR Supported Zalo And fix Vmess"
+    echo " Supported Zalo And fix Vmess"
     echo "------------------------------------------"
     echo "  XrayR                    - Hiển thị menu quản lý (nhiều chức năng hơn)"
     echo "  XrayR start              - Khởi động XrayR"
