@@ -84,7 +84,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/Aiko-XrayR/install/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/install/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
