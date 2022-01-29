@@ -15,6 +15,7 @@ WorkingDirectory=/usr/local/XrayR/
 ExecStart=/usr/local/XrayR/XrayR -config /etc/XrayR/config.yml
 Restart=on-failure
 RestartSec=10
+Environment="XRAY_VMESS_AEAD_FORCED=false"
 
 [Install]
 WantedBy=multi-user.target
