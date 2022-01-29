@@ -1,7 +1,7 @@
 version: '3'
 services: 
   xrayr: 
-    image: aiko/xrayr:latest
+    image: crackair/xrayr:latest
     volumes:
       - ./config:/etc/XrayR/ # AikoCuteHotme
     restart: always
