@@ -130,7 +130,7 @@ config() {
             ;;
         1)
             echo -e "Nó được phát hiện rằng bạn không khởi động XrayR hoặc XrayR không tự khởi động lại, hãy kiểm tra nhật ký？[Y/n]" && echo
-            read -e -p "(vỡ nợ: y):" yn
+            read -e -p "(yes or no):" yn
             [[ -z ${yn} ]] && yn="y"
             if [[ ${yn} == [Yy] ]]; then
                show_log
