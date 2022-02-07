@@ -366,8 +366,8 @@ show_XrayR_version() {
 }
 
 show_usage() {
-    echo "XrayR Cách sử dụng tập lệnh quản lý (tương thích với thực thi xrayr, không phân biệt chữ hoa chữ thường): "
-    echo " Supported Zalo And fix Vmess"
+    echo " XrayR Cách sử dụng tập lệnh quản lý (tương thích với thực thi xrayr, không phân biệt chữ hoa chữ thường): "
+    echo " AikoCute Hột Me"
     echo "------------------------------------------"
     echo "  XrayR                    - Hiển thị menu quản lý (nhiều chức năng hơn)"
     echo "  XrayR start              - Khởi động XrayR"
