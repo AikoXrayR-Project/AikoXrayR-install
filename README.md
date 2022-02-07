@@ -9,10 +9,10 @@ Tìm mã nguồn tại đây: [AikoCute/XrayR](https://github.com/AikoCute/XrayR
 
 [hướng dẫn](https://xrayr.aikocute.com) < Tiếng Việt>
 
-# Một cài đặt chính
+# Một cài đặt chính < Aiko XrayR >
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/Aiko-XrayR/master/install.sh)
+Public Sau nhé :D đang bận rồi < AikoCuteHotme >
 ```
 # Cài đặt Docker
 
