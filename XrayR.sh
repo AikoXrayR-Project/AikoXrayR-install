@@ -55,7 +55,7 @@ fi
 
 confirm() {
     if [[ $# > 1 ]]; then
-        echo && read -p "$1 [vỡ nợ$2]: " temp
+        echo && read -p "$1 [y or n$2]: " temp
         if [[ x"${temp}" == x"" ]]; then
             temp=$2
         fi
