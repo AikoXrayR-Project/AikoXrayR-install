@@ -113,7 +113,7 @@ pre_install_docker_compose() {
   [ -z "${api_key}" ] && api_key="adminadminadminadminadmin"
   echo -e "[1] SSpanel"
   echo -e "[2] V2board"
-  read -p "Loại bảng điều khiển phía trước:" panel_num
+  read -p "Web đang sử dụng:" panel_num
   if [ "$panel_num" == "1" ]; then
     panel_type="SSpanel"
   elif [ "$panel_num" == "2" ]; then
