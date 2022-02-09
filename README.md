@@ -36,3 +36,30 @@ Dòng nào có ngoặc kép nhớ để ý viết trong ngoặc kép
 
 Cấu hình xong nhớ khởi động lại xrayr nhé.
 
+# XrayR_onekey
+
+## biết ơn: 
+
+1. Tập lệnh này được sửa đổi và thêm các chức năng dựa trên tập lệnh ghép nối rico của @Aiko
+2. Nhóm dự án XrayR
+
+## Giới thiệu
+
+Tập lệnh gắn một cú nhấp chuột của trình docker phụ trợ XrayR
+
+> Địa chỉ dự án và tài liệu trợ giúp:  https://github.com/AikoCute/XrayR-relase
+>
+> Địa chỉ dự án XrayR: https://github.com/AikoCute/XrayR
+
+## script
+
+* sử dụng script
+
+  `mkdir xrayr1 && cd xrayr1`
+
+  `wget --no-check-certificate https://raw.githubusercontent.com/AikoCute/XrayR-release/master/Aiko-XrayR-Docker.sh && bash Aiko-XrayR-Docker.sh`  
+
+* Để mở nhiều phần mềm phụ trợ, bạn chỉ cần tạo một thư mục mới và tải tập lệnh xuống thư mục này để chạy
+
+
+
