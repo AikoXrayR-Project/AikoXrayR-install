@@ -1,8 +1,7 @@
 #!/bin/bash
-suijishu=`cat /dev/urandom | tr -dc '0-9a-z' | head -c 15`
-git clone https://github.com/AikoCute/XrayR-release /tmp/$suijishu && cd /tmp/$suijishu
+git clone https://github.com/AikoCute/XrayR-release
 sleep 5s
-file="./config/config.yml"
+file="./XrayR-release/config/config.yml"
 link="https://aikocute.com/"
 docker_compose_file="./docker-compose.yml"
 #Nhập thông tin
