@@ -1,9 +1,0 @@
-version: '3'
-services: 
-  xrayr: 
-    image: crackair/xrayr:latest
-    container_name: Aiko
-    volumes:
-      - ./config:/etc/XrayR/config.yml # thư mục cấu hình bản đồ
-    restart: always
-    network_mode: host
