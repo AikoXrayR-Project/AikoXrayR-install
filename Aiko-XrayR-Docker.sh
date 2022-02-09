@@ -9,9 +9,9 @@ red='\033[0;31m'
 green='\033[0;32m'
 #yellow='\033[0;33m'
 plain='\033[0m'
-operation=(全新安装 更新配置 更新镜像 查看日志 重启后端 删除后端)
+operation=(Cài đặt mới Cập nhật cấu hình Cập nhật gương Xem nhật ký Khởi động lại phần phụ trợ Xóa phần phụ trợ)
 # Make sure only root can run our script
-[[ $EUID -ne 0 ]] && echo -e "[${red}Error${plain}] 你没权没势 请先获取ROOT权限!" && exit 1
+[[ $EUID -ne 0 ]] && echo -e "[${red}Error${plain}] Chưa vào root kìa !, vui lòng xin phép ROOT trước!" && exit 1
 
 #Check system
 check_sys() {
@@ -95,25 +95,25 @@ get_char() {
 error_detect_depends() {
   local command=$1
   local depend=$(echo "${command}" | awk '{print $4}')
-  echo -e "[${green}Info${plain}] 开始安装软件包 ${depend}"
+  echo -e "[${green}Info${plain}] Bắt đầu cài đặt các gói ${depend}"
   ${command} >/dev/null 2>&1
   if [ $? -ne 0 ]; then
-    echo -e "[${red}Error${plain}] 软件包安装失败 ${red}${depend}${plain}"
+    echo -e "[${red}Error${plain}] Cài đặt gói không thành công ${red}${depend}${plain}"
     exit 1
   fi
 }
 
 # Pre-installation settings
 pre_install_docker_compose() {
-  read -p "前端节点信息里面的节点ID:" node_id
+  read -p "ID nút trong thông tin nút giao diện người dùng:" node_id
   [ -z "${node_id}" ] && node_id=0
-  read -p "前端面板域名(包括https://):" api_host
-  [ -z "${api_host}" ] && api_host="http://8.8.8.8"
-  read -p "前端面板的apikey:" api_key
-  [ -z "${api_key}" ] && api_key="123"
+  read -p "Tên miền bảng điều khiển phía trước (bao gồm https://):" api_host
+  [ -z "${api_host}" ] && api_host="https://aikocute.com"
+  read -p "apikey cho bảng điều khiển phía trước:" api_key
+  [ -z "${api_key}" ] && api_key="adminadminadminadminadmin"
   echo -e "[1] SSpanel"
   echo -e "[2] V2board"
-  read -p "前端面板类型:" panel_num
+  read -p "Loại bảng điều khiển phía trước:" panel_num
   if [ "$panel_num" == "1" ]; then
     panel_type="SSpanel"
   elif [ "$panel_num" == "2" ]; then
@@ -125,7 +125,7 @@ pre_install_docker_compose() {
   echo -e "[1] V2ray"
   echo -e "[2] Shadowsocks"
   echo -e "[3] Trojan"
-  read -p "节点类型:" node_num
+  read -p "Loại nút:" node_num
   if [ "$node_num" == "1" ]; then
     node_type="V2ray"
   elif [ "$node_num" == "2" ]; then
@@ -136,33 +136,33 @@ pre_install_docker_compose() {
     echo "type error, please try again"
     exit
   fi
-  echo -e "[1] 是"
-  echo -e "[2] 否"
-  read -p "是否开启tls/xtls（默认否）:" is_tls
+  echo -e "[1] Có"
+  echo -e "[2] Không"
+  read -p "Có bật tls / xtls hay không (mặc định không):" is_tls
   if [ "$is_tls" == "1" ]; then
-    read -p "请输入解析到本机的域名:" cert_domain
-    echo -e "[1] 是"
-    echo -e "[2] 否"
-    read -p "是否开启xtls（默认否）:" is_xtls
-    echo -e "[1] 是"
-    echo -e "[2] 否"
-    read -p "是否开启vless（默认否）:" is_vless
+    read -p "Vui lòng nhập tên miền được phân giải cho máy này < cert_domain>:" cert_domain
+    echo -e "[1] Có"
+    echo -e "[2] Không"
+    read -p "Có bật xtls hay không (mặc định không):" is_xtls
+    echo -e "[1] Có"
+    echo -e "[2] Không"
+    read -p "Có bật vless (mặc định không):" is_vless
   fi
 }
 
 # Config docker
 config_docker() {
   cd ${cur_dir} || exit
-  echo "开始安装软件包"
+  echo "Bắt đầu cài đặt các gói"
   install_dependencies
-  echo "加载DOCKER配置文件"
+  echo "Tải tệp cấu hình DOCKER"
   cat >docker-compose.yml <<EOF
 version: '3'
 services: 
   xrayr: 
     image: crackair/xrayr:latest
     volumes:
-      - ./config.yml:/etc/XrayR/config.yml # 映射配置文件夹
+      - ./config.yml:/etc/XrayR/config.yml # thư mục cấu hình bản đồ
       - ./dns.json:/etc/XrayR/dns.json 
     restart: always
     network_mode: host
@@ -179,30 +179,55 @@ EOF
 EOF
   cat >config.yml <<EOF
 Log:
-  Level: debug # Log level: none, error, warning, info, debug 
-  AccessPath: # ./access.Log
-  ErrorPath: # ./error.log
-DnsConfigPath: # ./dns.json  Path to dns config
+  Level: none # Log level: none, error, warning, info, debug 
+  AccessPath: # /etc/XrayR/access.Log
+  ErrorPath: # /etc/XrayR/error.log
+DnsConfigPath: # /etc/XrayR/dns.json Path to dns config, check https://xtls.github.io/config/base/dns/ for help
+RouteConfigPath: # /etc/XrayR/route.json # Path to route config, check https://xtls.github.io/config/base/route/ for help
+OutboundConfigPath: # /etc/XrayR/custom_outbound.json # Path to custom outbound config, check https://xtls.github.io/config/base/outbound/ for help
+ConnetionConfig:
+  Handshake: 4 # Handshake time limit, Second
+  ConnIdle: 10 # Connection idle time limit, Second
+  UplinkOnly: 2 # Time limit when the connection downstream is closed, Second
+  DownlinkOnly: 4 # Time limit when the connection is closed after the uplink is closed, Second
+  BufferSize: 64 # The internal cache size of each connection, kB 
 Nodes:
   -
-    PanelType: "SSpanel" # Panel type: SSpanel
+    PanelType: "V2board" # Panel type: SSpanel, V2board, PMpanel, Proxypanel
     ApiConfig:
-      ApiHost: "http://8.8.8.8"
-      ApiKey: "123"
+      ApiHost: "https://aikocute.com"
+      ApiKey: "adminadminadminadminadmin"
       NodeID: 41
-      NodeType: V2ray # Node type: V2ray, Shadowsocks, Trojan
-      Timeout: 30 # Timeout for the api request, Default is 5 sec
-      EnableVless: false # Enable Vless for V2ray Type, Prefer remote configuration
-      EnableXTLS: false # Enable XTLS for V2ray and Trojan， Prefer remote configuration
+      NodeType: V2ray # Node type: V2ray, Trojan, Shadowsocks, Shadowsocks-Plugin
+      Timeout: 30 # Timeout for the api request
+      EnableVless: false # Enable Vless for V2ray Type
+      EnableXTLS: false # Enable XTLS for V2ray and Trojan
+      SpeedLimit: 0 # Mbps, Local settings will replace remote settings, 0 means disable
+      DeviceLimit: 0 # Local settings will replace remote settings, 0 means disable
+      RuleListPath: # /etc/XrayR/rulelist Path to local rulelist file
     ControllerConfig:
       ListenIP: 0.0.0.0 # IP address you want to listen
+      SendIP: 0.0.0.0 # IP address you want to send pacakage
       UpdatePeriodic: 60 # Time to update the nodeinfo, how many sec.
-      EnableDNS: false # Enable custom DNS config, Please ensure that you set the dns.json well
+      EnableDNS: false # Use custom DNS config, Please ensure that you set the dns.json well
+      DNSType: AsIs # AsIs, UseIP, UseIPv4, UseIPv6, DNS strategy
+      DisableUploadTraffic: false # Disable Upload Traffic to the panel
+      DisableGetRule: false # Disable Get Rule from the panel
+      DisableIVCheck: false # Disable the anti-reply protection for Shadowsocks
+      DisableSniffing: true # Disable domain sniffing 
+      EnableProxyProtocol: false # Only works for WebSocket and TCP
+      EnableFallback: false # Only support for Trojan and Vless
+      FallBackConfigs:  # Support multiple fallbacks
+        -
+          SNI: # TLS SNI(Server Name Indication), Empty for any
+          Path: # HTTP PATH, Empty for any
+          Dest: 80 # Required, Destination of fallback, check https://xtls.github.io/config/fallback/ for details.
+          ProxyProtocolVer: 0 # Send PROXY protocol version, 0 for dsable
       CertConfig:
         CertMode: dns # Option about how to get certificate: none, file, http, dns. Choose "none" will forcedly disable the tls config.
         CertDomain: "node1.test.com" # Domain to cert
-        CertFile: ./cert/node1.test.com.cert # Provided if the CertMode is file
-        KeyFile: ./cert/node1.test.com.key
+        CertFile: /etc/XrayR/cert/node1.test.com.cert # Provided if the CertMode is file
+        KeyFile: /etc/XrayR/cert/node1.test.com.key
         Provider: alidns # DNS cert provider, Get the full support list here: https://go-acme.github.io/lego/dns/
         Email: test@me.com
         DNSEnv: # DNS ENV option used by DNS provider
@@ -228,25 +253,25 @@ EOF
 
 # Install docker and docker compose
 install_docker() {
-  echo -e "开始安装 DOCKER "
+  echo -e "bắt đầu cài đặt DOCKER "
   docker version >/dev/null || curl -fsSL get.docker.com | bash
   service docker restart
   systemctl enable docker
   service postfix stop
   systemctl disable postfix
-  echo -e "开始安装 Docker Compose "
+  echo -e "bắt đầu cài đặt Docker Compose "
   curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compose-$(uname -s)-$(uname -m) >/usr/local/bin/docker-compose
   chmod +x /usr/local/bin/docker-compose
   curl -L https://raw.githubusercontent.com/docker/compose/1.8.0/contrib/completion/bash/docker-compose >/etc/bash_completion.d/docker-compose
   clear
-  echo "启动 Docker "
+  echo "khởi động Docker "
   service docker start
-  echo "启动 Docker-Compose "
+  echo "khởi động Docker-Compose "
   docker-compose up -d
   echo
-  echo -e "后端安装完成！"
+  echo -e "Đã hoàn tất cài đặt phụ trợ ！"
   echo -e "0 0 */3 * *  cd /root/${cur_dir} && /usr/local/bin/docker-compose pull && /usr/local/bin/docker-compose up -d" >>/etc/crontab
-  echo -e "后端定时更新设置完成！(3天一次)"
+  echo -e "Cài đặt cập nhật thời gian kết thúc đã hoàn tất! (3 ngày một lần)"
 }
 
 install_check() {
@@ -262,14 +287,14 @@ install_check() {
 
 install_dependencies() {
   if check_sys packageManager yum; then
-    echo -e "[${green}Info${plain}] 检查EPEL存储库..."
+    echo -e "[${green}Info${plain}] Kiểm tra kho EPEL ..."
     if [ ! -f /etc/yum.repos.d/epel.repo ]; then
       yum install -y epel-release >/dev/null 2>&1
     fi
-    [ ! -f /etc/yum.repos.d/epel.repo ] && echo -e "[${red}Error${plain}] 安装EPEL储存库失败，请检查一下." && exit 1
+    [ ! -f /etc/yum.repos.d/epel.repo ] && echo -e "[${red}Error${plain}] Không cài đặt được kho EPEL, vui lòng kiểm tra." && exit 1
     [ ! "$(command -v yum-config-manager)" ] && yum install -y yum-utils >/dev/null 2>&1
     [ x"$(yum-config-manager epel | grep -w enabled | awk '{print $3}')" != x"True" ] && yum-config-manager --enable epel >/dev/null 2>&1
-    echo -e "[${green}Info${plain}] 检查EPEL储存库是否完整..."
+    echo -e "[${green}Info${plain}] Kiểm tra xem kho lưu trữ EPEL đã hoàn tất chưa ..."
 
     yum_depends=(
       curl
@@ -286,8 +311,8 @@ install_dependencies() {
       error_detect_depends "apt-get -y install ${depend}"
     done
   fi
-  echo -e "[${green}Info${plain}] 将时区设置为上海"
-  ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+  echo -e "[${green}Info${plain}] Đặt múi giờ thành Hồ Chí Minh GTM+7"
+  ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh  /etc/localtime
   date -s "$(curl -sI g.cn | grep Date | cut -d' ' -f3-6)Z"
 
 }
@@ -295,43 +320,43 @@ install_dependencies() {
 #update_image
 更新镜像_xrayr() {
   cd ${cur_dir}
-  echo "关闭当前服务"
+  echo "đóng dịch vụ hiện tại"
   docker-compose down
-  echo "加载DOCKER镜像"
+  echo "Tải hình ảnh DOCKER"
   docker-compose pull
-  echo "开始运行DOKCER服务"
+  echo "Bắt đầu chạy dịch vụ DOCKER"
   docker-compose up -d
 }
 
 #show last 100 line log
 
 查看日志_xrayr() {
-  echo "将要显示100行的运行日志"
+  echo "100 dòng nhật ký chạy sẽ được hiển thị"
   docker-compose logs --tail 100
 }
 
 # Update config
 更新配置_xrayr() {
   cd ${cur_dir}
-  echo "关闭当前服务"
+  echo "đóng dịch vụ hiện tại"
   docker-compose down
   pre_install_docker_compose
   config_docker
-  echo "开始运行DOKCER服务"
+  echo "Bắt đầu chạy dịch vụ DOKCER"
   docker-compose up -d
 }
 重启后端_xrayr() {
   cd ${cur_dir}
   docker-compose down
   docker-compose up -d
-  echo "重启成功！"
+  echo "Khởi động lại thành công!"
 }
 删除后端_xrayr() {
   cd ${cur_dir}
   docker-compose down
   cd ~
   rm -Rf ${cur_dir}
-  echo "删除成功！"
+  echo "đã xóa thành công!"
 }
 # Install xrayr
 全新安装_xrayr() {
@@ -343,25 +368,25 @@ install_dependencies() {
 # Initialization step
 clear
 while true; do
-  echo "-----XrayR onekey-----"
-  echo "项目地址及帮助文档:  https://github.com/KANIKIG/XrayR_onekey"
-  echo "请输入数字选择你要进行的操作："
+  echo "-----XrayR Aiko-----"
+  echo "Địa chỉ dự án và tài liệu trợ giúp:  https://github.com/AikoCute/XrayR-relase"
+  echo "Vui lòng nhập một số để chọn những gì bạn muốn làm:"
   for ((i = 1; i <= ${#operation[@]}; i++)); do
     hint="${operation[$i - 1]}"
     echo -e "${green}${i}${plain}) ${hint}"
   done
-  read -p "请选择数字后回车 (回车默认 ${operation[0]}):" selected
+  read -p "Vui lòng chọn một số và nhấn Enter (Enter theo mặc định ${operation[0]}):" selected
   [ -z "${selected}" ] && selected="1"
   case "${selected}" in
   1 | 2 | 3 | 4 | 5 | 6 | 7)
     echo
-    echo "你的想法 = ${operation[${selected} - 1]}"
+    echo "suy nghĩ của bạn = ${operation[${selected} - 1]}"
     echo
     ${operation[${selected} - 1]}_xrayr
     break
     ;;
   *)
-    echo -e "[${red}Error${plain}] 请输入正确数字 [1-4]"
+    echo -e "[${red}Error${plain}] Vui lòng nhập số chính xác [1-4]"
     ;;
   esac
 done
