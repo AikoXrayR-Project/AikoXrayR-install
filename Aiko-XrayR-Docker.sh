@@ -9,7 +9,7 @@ red='\033[0;31m'
 green='\033[0;32m'
 #yellow='\033[0;33m'
 plain='\033[0m'
-operation=(Install Update Update_configuration logs restart delete)
+operation=(Cài_Đặt Cập_nhật Cập_nhật_config Nhật_kí Khởi_động_lại Xoá_docker)
 # Make sure only root can run our script
 [[ $EUID -ne 0 ]] && echo -e "[${red}Error${plain}] Chưa vào root kìa !, vui lòng xin phép ROOT trước!" && exit 1
 
@@ -105,11 +105,11 @@ error_detect_depends() {
 
 # Pre-installation settings
 pre_install_docker_compose() {
-  read -p "ID nút trong thông tin nút giao diện người dùng:" node_id
+  read -p " ID nút trong thông tin nút giao diện người dùng:" node_id
   [ -z "${node_id}" ] && node_id=0
-  read -p "Tên miền bảng điều khiển phía trước (bao gồm https://):" api_host
+  read -p " Tên miền bảng điều khiển phía trước (bao gồm https://):" api_host
   [ -z "${api_host}" ] && api_host="https://aikocute.com"
-  read -p "apikey cho bảng điều khiển phía trước:" api_key
+  read -p " Apikey cho bảng điều khiển phía trước:" api_key
   [ -z "${api_key}" ] && api_key="adminadminadminadminadmin"
   echo -e "[1] SSpanel"
   echo -e "[2] V2board"
