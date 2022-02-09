@@ -8,10 +8,22 @@ Tìm mã nguồn tại đây: [XrayR-project/XrayR](https://github.com/AikoCute/
 ## Hướng dẫn chi tiết
 [Hướng dẫn](https://xrayr.aikocute.com)
 
-## Cài đặt 
+## Cài đặt Link < Cách 1 >
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/master/Aiko-XrayR-Docker.sh)
 ```
+
+## Cài đặt script < Cách 2 >
+
+* sử dụng script
+ ```
+  mkdir xrayr1 && cd xrayr1
+```
+
+```
+  wget --no-check-certificate https://raw.githubusercontent.com/AikoCute/XrayR-release/master/Aiko-XrayR-Docker.sh && bash Aiko-XrayR-Docker.sh
+```
+
 ## Cấu hình xrayr
 Vào thư mục này để cấu hình
 ```
@@ -36,7 +48,7 @@ Dòng nào có ngoặc kép nhớ để ý viết trong ngoặc kép
 
 Cấu hình xong nhớ khởi động lại xrayr nhé.
 
-# XrayR_onekey
+# XrayR
 
 ## biết ơn: 
 
@@ -50,14 +62,6 @@ Tập lệnh gắn một cú nhấp chuột của trình docker phụ trợ Xray
 > Địa chỉ dự án và tài liệu trợ giúp:  https://github.com/AikoCute/XrayR-release
 >
 > Địa chỉ dự án XrayR: https://github.com/AikoCute/XrayR
-
-## script
-
-* sử dụng script
-
-  `mkdir xrayr1 && cd xrayr1`
-
-  `wget --no-check-certificate https://raw.githubusercontent.com/AikoCute/XrayR-release/master/Aiko-XrayR-Docker.sh && bash Aiko-XrayR-Docker.sh`  
 
 * Để mở nhiều phần mềm phụ trợ, bạn chỉ cần tạo một thư mục mới và tải tập lệnh xuống thư mục này để chạy
 
