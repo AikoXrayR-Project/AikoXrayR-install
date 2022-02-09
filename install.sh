@@ -1,5 +1,6 @@
 #!/bin/bash
-suijishu=`cat /dev/urandom | tr -dc '0-9a-z' | head -c 15`
+bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/main/docker.sh)
+aiko=`cat /dev/urandom | tr -dc '0-9a-z' | head -c 15`
 git clone https://github.com/AikoCute/XrayR-release /tmp/$aiko && cd /tmp/$aiko
 sleep 5s
 file="./config/config.yml"
