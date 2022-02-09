@@ -254,16 +254,25 @@ EOF
 # Install docker and docker compose
 install_docker() {
   echo -e "bắt đầu cài đặt DOCKER "
-  docker version >/dev/null || curl -fsSL get.docker.com | bash
-  service docker restart
-  systemctl enable docker
-  service postfix stop
-  systemctl disable postfix
+ sudo apt-get update
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+systemctl start docker
+systemctl enable docker
   echo -e "bắt đầu cài đặt Docker Compose "
-  curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compose-$(uname -s)-$(uname -m) >/usr/local/bin/docker-compose
-  chmod +x /usr/local/bin/docker-compose
-  curl -L https://raw.githubusercontent.com/docker/compose/1.8.0/contrib/completion/bash/docker-compose >/etc/bash_completion.d/docker-compose
-  clear
+curl -fsSL https://get.docker.com | bash -s docker
+curl -L "https://github.com/docker/compose/releases/download/1.26.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
   echo "khởi động Docker "
   service docker start
   echo "khởi động Docker-Compose "
@@ -271,7 +280,7 @@ install_docker() {
   echo
   echo -e "Đã hoàn tất cài đặt phụ trợ ！"
   echo -e "0 0 */3 * *  cd /root/${cur_dir} && /usr/local/bin/docker-compose pull && /usr/local/bin/docker-compose up -d" >>/etc/crontab
-  echo -e "Cài đặt cập nhật thời gian kết thúc đã hoàn tất! (3 ngày một lần)"
+  echo -e "Cài đặt cập nhật thời gian kết thúc đã hoàn tất!"
 }
 
 install_check() {
