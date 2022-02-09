@@ -47,7 +47,7 @@ Cấu hình xong nhớ khởi động lại xrayr nhé.
 
 Tập lệnh gắn một cú nhấp chuột của trình docker phụ trợ XrayR
 
-> Địa chỉ dự án và tài liệu trợ giúp:  https://github.com/AikoCute/XrayR-relase
+> Địa chỉ dự án và tài liệu trợ giúp:  https://github.com/AikoCute/XrayR-release
 >
 > Địa chỉ dự án XrayR: https://github.com/AikoCute/XrayR
 
