@@ -370,7 +370,8 @@ clear
 while true; do
   echo "-----XrayR Aiko-----"
   echo "Địa chỉ dự án và tài liệu trợ giúp:  https://github.com/AikoCute/XrayR-relase"
-  echo "Vui lòng nhập một số để chọn những gì bạn muốn làm:"
+  echo "AikoCute Hột Me"
+  echo "Vui lòng nhập một số để Thực Hiện Câu Lệnh:"
   for ((i = 1; i <= ${#operation[@]}; i++)); do
     hint="${operation[$i - 1]}"
     echo -e "${green}${i}${plain}) ${hint}"
@@ -380,13 +381,13 @@ while true; do
   case "${selected}" in
   1 | 2 | 3 | 4 | 5 | 6 | 7)
     echo
-    echo "suy nghĩ của bạn = ${operation[${selected} - 1]}"
+    echo "Bắt Đầu : ${operation[${selected} - 1]}"
     echo
     ${operation[${selected} - 1]}_xrayr
     break
     ;;
   *)
-    echo -e "[${red}Error${plain}] Vui lòng nhập số chính xác [1-4]"
+    echo -e "[${red}Error${plain}] Vui lòng nhập số chính xác [1-6]"
     ;;
   esac
 done
