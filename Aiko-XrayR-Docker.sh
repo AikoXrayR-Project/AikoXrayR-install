@@ -112,7 +112,7 @@ pre_install_docker_compose() {
   read -p " Apikey (web API):" api_key
   [ -z "${api_key}" ] && api_key="adminadminadminadminadmin"
   read "gioi han thiet bi :" DeviceLimit
-  [ -z "${DeviceLimit}" ] && DeviceLimit=0
+  [ -z "${DeviceLimit}" ] && DeviceLimit="0"
   echo -e "[1] SSpanel"
   echo -e "[2] V2board"
   read -p "Web đang sử dụng:" panel_num
@@ -286,7 +286,7 @@ chmod +x /usr/local/bin/docker-compose
   echo
   echo -e "Đã hoàn tất cài đặt phụ trợ ！"
   echo -e "0 0 */3 * *  cd /root/${cur_dir} && /usr/local/bin/docker-compose pull && /usr/local/bin/docker-compose up -d" >>/etc/crontab
-  echo -e "Cài đặt cập nhật thời gian kết thúc đã hoàn tất! hệ thống sẽ update sau 10080 giờ Từ lúc bạn cài đặt"
+  echo -e "Cài đặt cập nhật thời gian kết thúc đã hoàn tất! hệ thống sẽ update sau [${green}24H${plain}] Từ lúc bạn cài đặt"
 }
 
 install_check() {
