@@ -10,7 +10,7 @@ Tìm mã nguồn tại đây: [XrayR-project/XrayR](https://github.com/AikoCute/
 
 ## Cài đặt Link < Cách 1 >
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/master/Aiko-XrayR-Docker.sh)
+Aikocute Hột Me - Comming Soon
 ```
 
 ## Cài đặt script < Cách 2 >
@@ -21,7 +21,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/master/
 ```
 
 ```
-  wget --no-check-certificate https://raw.githubusercontent.com/AikoCute/XrayR-release/master/Aiko-XrayR-Docker.sh && bash Aiko-XrayR-Docker.sh
+ Aikocute Hột Me - Comming Soon
 ```
 
 ## Cấu hình xrayr
