@@ -329,8 +329,6 @@ install_dependencies() {
 #update_image
 Update_xrayr() {
   cd ${cur_dir}
-  echo "đóng dịch vụ hiện tại"
-  docker-compose down
   echo "Tải hình ảnh DOCKER"
   docker-compose pull
   echo "Bắt đầu chạy dịch vụ DOCKER"
