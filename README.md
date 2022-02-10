@@ -17,7 +17,7 @@ Aikocute Hột Me - Comming Soon
 
 * sử dụng script
  ```
-  mkdir xrayr1 && cd xrayr1
+   Aikocute Hột Me - Comming Soon
 ```
 
 ```
