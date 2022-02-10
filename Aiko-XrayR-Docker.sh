@@ -122,6 +122,7 @@ pre_install_docker_compose() {
     echo "type error, please try again"
     exit
   fi
+
   echo -e "[1] V2ray"
   echo -e "[2] Shadowsocks"
   echo -e "[3] Trojan"
@@ -148,10 +149,8 @@ pre_install_docker_compose() {
     echo -e "[2] Không"
     read -p "Có bật vless (mặc định không):" is_vless
   fi
-}
- 
-    #giới hạn thiết bị
-    echo "Giới hạn thiết bị < nếu không nhập sẽ cài mặt định là 2 >"
+  #gioi han thiet bi
+  echo "Giới hạn thiết bị"
     echo ""
     read -p "Vui lòng nhập Số thiết bị tối đa " DeviceLimit
     [ -z "${DeviceLimit}" ]
@@ -159,6 +158,8 @@ pre_install_docker_compose() {
     echo "giới hạn số thiết bị: ${Devicelimit}"
     echo "---------------------------"
     echo ""
+}
+ 
 
 
 # Config docker
