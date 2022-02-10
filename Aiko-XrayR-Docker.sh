@@ -327,7 +327,7 @@ install_dependencies() {
 }
 
 #update_image
-update_xrayr() {
+Update_xrayr() {
   cd ${cur_dir}
   echo "đóng dịch vụ hiện tại"
   docker-compose down
@@ -345,7 +345,7 @@ logs_xrayr() {
 }
 
 # Update config
-Update_configuration_xrayr() {
+UpdateConfiguration_xrayr() {
   cd ${cur_dir}
   echo "đóng dịch vụ hiện tại"
   docker-compose down
