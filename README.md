@@ -17,11 +17,11 @@ Aikocute Hột Me - Comming Soon
 
 * sử dụng script
  ```
-   Aikocute Hột Me - Comming Soon
+                                                  Aikocute Hột Me - Comming Soon
 ```
 
 ```
- Aikocute Hột Me - Comming Soon
+                                                  Aikocute Hột Me - Comming Soon
 ```
 
 ## Cấu hình xrayr
