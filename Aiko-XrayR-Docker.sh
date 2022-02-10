@@ -382,7 +382,7 @@ Install_xrayr() {
 clear
 while true; do
   echo "-----XrayR Aiko-----"
-  echo "Địa chỉ dự án và tài liệu trợ giúp:  https://github.com/AikoCute/XrayR-relase"
+  echo "Địa chỉ dự án và tài liệu trợ giúp:  https://github.com/AikoCute/XrayR"
   echo "AikoCute Hột Me"
   echo "Vui lòng nhập một số để Thực Hiện Câu Lệnh:"
   for ((i = 1; i <= ${#operation[@]}; i++)); do
