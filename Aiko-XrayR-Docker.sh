@@ -111,8 +111,8 @@ pre_install_docker_compose() {
   [ -z "${api_host}" ] && api_host="https://aikocute.com"
   read -p " Apikey (web API):" api_key
   [ -z "${api_key}" ] && api_key="adminadminadminadminadmin"
-  read -p "thiết bị tối đa < Số >:" device_limit
-  [ -z "${device_limit}" ] && device_limit=0
+  read "gioi han thiet bi :" DeviceLimit
+  [ -z "${DeviceLimit}" ] && DeviceLimit=0
   echo -e "[1] SSpanel"
   echo -e "[2] V2board"
   read -p "Web đang sử dụng:" panel_num
@@ -244,7 +244,7 @@ EOF
   sed -i "s|ApiKey:.*|ApiKey: \"${api_key}\"|" ./config.yml
   sed -i "s|PanelType:.*|PanelType: \"${panel_type}\"|" ./config.yml
   sed -i "s|NodeType:.*|NodeType: ${node_type}|" ./config.yml
-  sed -i "s|device_limit:.*|device_limit: ${device_limit}|" ./config.yml
+  sed -i "s|DeviceLimit:.*|DeviceLimit: ${DeviceLimit}|" ./config.yml
   if [ "$is_tls" == "1" ]; then
     sed -i "s|CertMode:.*|CertMode: http|" ./config.yml
     sed -i "s|CertDomain:.*|CertDomain: \"${cert_domain}\"|" ./config.yml
