@@ -111,7 +111,7 @@ pre_install_docker_compose() {
   [ -z "${api_host}" ] && api_host="https://aikocute.com"
   read -p " Apikey (web API):" api_key
   [ -z "${api_key}" ] && api_key="adminadminadminadminadmin"
-  read -p "device_limit (Số lượng thiết bị tối đa):" device_limit
+  read -p "thiết bị tối đa < Số >:" device_limit
   [ -z "${device_limit}" ] && device_limit=0
   echo -e "[1] SSpanel"
   echo -e "[2] V2board"
