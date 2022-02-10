@@ -149,6 +149,17 @@ pre_install_docker_compose() {
     read -p "Có bật vless (mặc định không):" is_vless
   fi
 }
+ 
+    #giới hạn thiết bị
+    echo "Giới hạn thiết bị < nếu không nhập sẽ cài mặt định là 2 >"
+    echo ""
+    read -p "Vui lòng nhập Số thiết bị tối đa " DeviceLimit
+    [ -z "${DeviceLimit}" ]
+    echo "---------------------------"
+    echo "giới hạn số thiết bị: ${Devicelimit}"
+    echo "---------------------------"
+    echo ""
+
 
 # Config docker
 config_docker() {
@@ -239,6 +250,7 @@ EOF
   sed -i "s|ApiKey:.*|ApiKey: \"${api_key}\"|" ./config.yml
   sed -i "s|PanelType:.*|PanelType: \"${panel_type}\"|" ./config.yml
   sed -i "s|NodeType:.*|NodeType: ${node_type}|" ./config.yml
+  sed -i "s|device_limit:.*|device_limit: ${device_limit}|" ./config.yml
   if [ "$is_tls" == "1" ]; then
     sed -i "s|CertMode:.*|CertMode: http|" ./config.yml
     sed -i "s|CertDomain:.*|CertDomain: \"${cert_domain}\"|" ./config.yml
