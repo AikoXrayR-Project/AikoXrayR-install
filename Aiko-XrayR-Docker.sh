@@ -111,6 +111,8 @@ pre_install_docker_compose() {
   [ -z "${api_host}" ] && api_host="https://aikocute.com"
   read -p " Apikey (web API):" api_key
   [ -z "${api_key}" ] && api_key="adminadminadminadminadmin"
+  read -p "device_limit (Số lượng thiết bị tối đa):" device_limit
+  [ -z "${device_limit}" ] && device_limit=0
   echo -e "[1] SSpanel"
   echo -e "[2] V2board"
   read -p "Web đang sử dụng:" panel_num
@@ -149,15 +151,6 @@ pre_install_docker_compose() {
     echo -e "[2] Không"
     read -p "Có bật vless (mặc định không):" is_vless
   fi
-  #gioi han thiet bi
-  echo "Giới hạn thiết bị"
-    echo ""
-    read -p "Vui lòng nhập Số thiết bị tối đa " DeviceLimit
-    [ -z "${DeviceLimit}" ]
-    echo "---------------------------"
-    echo "giới hạn số thiết bị: ${Devicelimit}"
-    echo "---------------------------"
-    echo ""
 }
  
 
