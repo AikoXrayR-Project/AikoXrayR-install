@@ -26,7 +26,7 @@ elif cat /proc/version | grep -Eqi "ubuntu"; then
 elif cat /proc/version | grep -Eqi "centos|red hat|redhat"; then
     release="centos"
 else
-    echo -e "${red}Phiên bản hệ thống không được phát hiện, vui lòng liên hệ với tác giả kịch bản！${plain}\n" && exit 1
+    echo -e "${red}Phiên bản hệ thống không được phát hiện, vui lòng liên hệ với AikoCute để được fix sớm nhất ${plain}\n" && exit 1
 fi
 
 os_version=""
@@ -110,7 +110,7 @@ update() {
 #    fi
     bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/data/XrayR.sh) $version
     if [[ $? == 0 ]]; then
-        echo -e "${green}Cập nhật hoàn tất, XrayR đã được khởi động lại tự động, vui lòng sử dụng nhật ký XrayR để xem nhật ký chạy${plain}"
+        echo -e "${green}Cập nhật hoàn tất, XrayR đã được khởi động lại tự động, vui lòng sử dụng XrayR logs dể xem thành quả${plain}"
         exit
     fi
 
@@ -121,7 +121,7 @@ update() {
 
 config() {
     echo "XrayR sẽ tự động khởi động lại sau khi sửa đổi cấu hình"
-    vi /etc/XrayR/config.yml
+    nano /etc/XrayR/config.yml
     sleep 2
     check_status
     case $? in
@@ -156,9 +156,10 @@ uninstall() {
     systemctl reset-failed
     rm /etc/XrayR/ -rf
     rm /usr/local/XrayR/ -rf
+    rm /usr/bin/XrayR -f
 
     echo ""
-    echo -e "Gỡ cài đặt thành công, nếu bạn muốn xóa tập lệnh này, hãy chạy sau khi thoát tập lệnh ${green}rm /usr/bin/XrayR -f${plain} xóa"
+    echo -e "Gỡ cài đặt thành công, Đã gỡ cài đặt toàn bộ ra khỏi hệ thống"
     echo ""
 
     if [[ $# == 0 ]]; then
@@ -170,15 +171,15 @@ start() {
     check_status
     if [[ $? == 0 ]]; then
         echo ""
-        echo -e "${green}XrayR đã chạy rồi, không cần khởi động lại, nếu muốn khởi động lại, vui lòng chọn khởi động lại${plain}"
+        echo -e "${green}XrayR đã chạy rồi, Muốn reset thì chạy lệnh : XrayR restart ${plain}"
     else
         systemctl start XrayR
         sleep 2
         check_status
         if [[ $? == 0 ]]; then
-            echo -e "${green}XrayR đã khởi động thành công, vui lòng sử dụng nhật ký XrayR để xem nhật ký đang chạy${plain}"
+            echo -e "${green}XrayR đã khởi động thành công, Vui lòng check Web để Hưởng thành quả < AikoCute Hot Me >${plain}"
         else
-            echo -e "${red}XrayR có thể không khởi động được, vui lòng sử dụng nhật ký XrayR để xem thông tin nhật ký sau này${plain}"
+            echo -e "${red}XrayR có thể không khởi động được, Sài XrayR logs để check lỗi ${plain}"
         fi
     fi
 
@@ -192,9 +193,9 @@ stop() {
     sleep 2
     check_status
     if [[ $? == 1 ]]; then
-        echo -e "${green}XrayR đã dừng thành công${plain}"
+        echo -e "${green}XrayR đã Stop thành công < Cute hotme >${plain}"
     else
-        echo -e "${red}XrayR không dừng được, có thể do thời gian dừng vượt quá hai giây, vui lòng kiểm tra thông tin nhật ký sau${plain}"
+        echo -e "${red}XrayR không Stop được, có thể do thời gian dừng vượt quá hai giây, vui lòng kiểm tra Logs để xem nguyên nhân ${plain}"
     fi
 
     if [[ $# == 0 ]]; then
@@ -207,9 +208,9 @@ restart() {
     sleep 2
     check_status
     if [[ $? == 0 ]]; then
-        echo -e "${green}XrayR đã khởi động lại thành công, vui lòng sử dụng nhật ký XrayR để xem nhật ký đang chạy${plain}"
+        echo -e "${green}XrayR đã khởi động lại thành công, vui lòng sử dụng XrayR Logs để xem nhật ký đang chạy${plain}"
     else
-        echo -e "${red}XrayR có thể không khởi động được, vui lòng sử dụng nhật ký XrayR để xem thông tin nhật ký sau này${plain}"
+        echo -e "${red}XrayR có thể không khởi động được, vui lòng sử dụng XrayR Logs để xem thông tin nhật ký sau này${plain}"
     fi
     if [[ $# == 0 ]]; then
         before_show_menu
