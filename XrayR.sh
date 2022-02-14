@@ -366,6 +366,10 @@ show_XrayR_version() {
     fi
 }
 
+update_aiko(){
+    XrayR update ${last_version}
+}
+
 show_usage() {
     echo " XrayR Cách sử dụng tập lệnh quản lý (tương thích với thực thi xrayr, không phân biệt chữ hoa chữ thường): "
     echo " AikoCute Hột Me"
@@ -410,6 +414,7 @@ show_menu() {
  ${green}11.${plain} Một cú nhấp chuột cài đặt bbr (hạt nhân mới nhất)
  ${green}12.${plain} Xem các phiên bản XrayR 
  ${green}13.${plain} Nâng cấp Tập lệnh Bảo trì
+ ${green}14.${plain} Update Aiikocute hotme
  "
  # Cập nhật tiếp theo có thể được thêm vào chuỗi trên
     show_status
@@ -443,6 +448,8 @@ show_menu() {
         12) check_install && show_XrayR_version
         ;;
         13) update_shell
+        ;;
+        14) update_aiko
         ;;
         *) echo -e "${red}Vui lòng nhập số chính xác [0-12]${plain}"
         ;;
