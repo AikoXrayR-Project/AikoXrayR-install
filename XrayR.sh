@@ -159,7 +159,7 @@ uninstall() {
     rm /usr/bin/XrayR -f
 
     echo ""
-    echo -e "Gỡ cài đặt thành công, Đã gỡ cài đặt toàn bộ ra khỏi hệ thống"
+    echo -e "${green}Gỡ cài đặt thành công, Đã gỡ cài đặt toàn bộ ra khỏi hệ thống${plain}"
     echo ""
 
     if [[ $# == 0 ]]; then
