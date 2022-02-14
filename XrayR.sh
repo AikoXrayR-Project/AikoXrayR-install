@@ -392,7 +392,7 @@ show_menu() {
     echo -e "
   ${green}XrayR Các tập lệnh quản lý phụ trợ，${plain}${red}không hoạt động với docker${plain}
 --- https://github.com/XrayR-project/XrayR ---
-  ${green}0.${plain} Thay đổi cài đặt
+  ${green}0.${plain} Setting Config
 ————————————————
   ${green}1.${plain} Cài đặt XrayR
   ${green}2.${plain} Cập nhật XrayR
