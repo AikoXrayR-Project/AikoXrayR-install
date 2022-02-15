@@ -347,6 +347,7 @@ UpdateConfig_xrayr() {
   echo "Bắt đầu chạy dịch vụ DOKCER"
   docker-compose up -d
 }
+
 restart_backend_xrayr() {
   cd ${cur_dir}
   docker-compose down
