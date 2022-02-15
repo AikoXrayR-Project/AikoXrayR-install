@@ -162,25 +162,15 @@ config_docker() {
   install_dependencies
   echo "Tải tệp cấu hình DOCKER"
   cat >docker-compose.yml <<EOF
+
 version: '3'
 services: 
   xrayr: 
-    image: crackair/xrayr:latest
+    image: aikocute/aikoxrayr:latest
     volumes:
-      - ./config.yml:/etc/XrayR/config.yml # thư mục cấu hình bản đồ
-      - ./dns.json:/etc/XrayR/dns.json 
+      - ./config:/etc/XrayR/ #AikoCuteHotMe
     restart: always
     network_mode: host
-EOF
-  cat >dns.json <<EOF
-{
-    "servers": [
-        "1.1.1.1",
-        "8.8.8.8",
-        "localhost"
-    ],
-    "tag": "dns_inbound"
-}
 EOF
   cat >config.yml <<EOF
 Log:
