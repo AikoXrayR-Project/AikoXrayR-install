@@ -107,9 +107,9 @@ error_detect_depends() {
 pre_install_docker_compose() {
   read -p " ID nút (Node_ID):" node_id
   [ -z "${node_id}" ] && node_id=0
-  read -p " Tên miền web : (https://aikocute.com/):" api_host
+  read -p " Tên miền web : ( https://aikocute.com/ ):" api_host
   [ -z "${api_host}" ] && api_host="https://aikocute.com"
-  read -p " Apikey (web API): (adminadminadminadminadmin):" api_key
+  read -p " Apikey (web API): ( adminadminadminadminadmin ):" api_key
   [ -z "${api_key}" ] && api_key="adminadminadminadminadmin"
   read -p "Giới hạn thiết bị :" DeviceLimit
   [ -z "${DeviceLimit}" ] && DeviceLimit="0"
@@ -156,7 +156,7 @@ services:
   xrayr: 
     image: aikocute/aikoxrayr:latest
     volumes:
-      - ./config.yml:/etc/XrayR/config.yml # AikoCuteHotme
+      - ./config.yml:/etc/XrayR/config.yml # thư mục cấu hình bản đồ
       - ./dns.json:/etc/XrayR/dns.json 
     restart: always
     network_mode: host
