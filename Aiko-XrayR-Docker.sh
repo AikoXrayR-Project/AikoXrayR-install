@@ -338,7 +338,7 @@ logs_xrayr() {
 }
 
 # Update config
-UpdateConfiguration_xrayr() {
+UpdateConfig_xrayr() {
   cd ${cur_dir}
   echo "đóng dịch vụ hiện tại"
   docker-compose down
