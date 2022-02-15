@@ -177,7 +177,7 @@ start() {
         sleep 2
         check_status
         if [[ $? == 0 ]]; then
-            echo -e "${green}XrayR đã khởi động thành công, Vui lòng check Web để Hưởng thành quả < AikoCute Hot Me >${plain}"
+            echo -e "${green} XrayR đã khởi động thành công <AikoCuteHotMe>${plain}"
         else
             echo -e "${red}XrayR có thể không khởi động được, Sài XrayR logs để check lỗi ${plain}"
         fi
