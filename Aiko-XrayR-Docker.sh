@@ -168,9 +168,20 @@ services:
   xrayr: 
     image: aikocute/aikoxrayr:latest
     volumes:
-      - ./config:/etc/XrayR/ #AikoCuteHotMe
+      - ./config.yml:/etc/XrayR/config.yml # AikoCuteHotme
+      - ./dns.json:/etc/XrayR/dns.json 
     restart: always
     network_mode: host
+EOF
+  cat >dns.json <<EOF
+{
+    "servers": [
+        "1.1.1.1",
+        "8.8.8.8",
+        "localhost"
+    ],
+    "tag": "dns_inbound"
+}
 EOF
   cat >config.yml <<EOF
 Log:
