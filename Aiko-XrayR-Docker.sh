@@ -234,16 +234,6 @@ EOF
   sed -i "s|PanelType:.*|PanelType: \"${panel_type}\"|" ./config.yml
   sed -i "s|NodeType:.*|NodeType: ${node_type}|" ./config.yml
   sed -i "s|DeviceLimit:.*|DeviceLimit: ${DeviceLimit}|" ./config.yml
-  if [ "$is_tls" == "1" ]; then
-    sed -i "s|CertMode:.*|CertMode: http|" ./config.yml
-    sed -i "s|CertDomain:.*|CertDomain: \"${cert_domain}\"|" ./config.yml
-  fi
-  if [ "$is_xtls" == "1" ]; then
-    sed -i "s|EnableXTLS:.*|EnableXTLS: true|" ./config.yml
-  fi
-  if [ "$is_vless" == "1" ]; then
-    sed -i "s|EnableVless:.*|EnableVless: true|" ./config.yml
-  fi
 }
 
 # Install docker and docker compose
