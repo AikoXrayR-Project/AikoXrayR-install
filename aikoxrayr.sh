@@ -151,6 +151,24 @@ pre_install_docker_compose() {
     echo -e "[2] Không"
     read -p "Có bật vless (mặc định không):" is_vless
   fi
+
+  # 关闭AEAD强制加密
+    echo "Chọn có tắt mã hóa cưỡng bức AEAD hay không (tắt mặc định)"
+    echo ""
+    read -p "Vui lòng nhập lựa chọn của bạn (1 bật, 0 tắt): " aead_disable
+    [ -z "${aead_disable}" ]
+   
+
+    # 如果不输入默认为关闭
+    if [ ! $aead_disable ]; then
+    aead_disable="0"
+    fi
+
+    echo "---------------------------"
+    echo "Bạn đã chọn ${aead_disable}"
+    echo "---------------------------"
+    echo ""
+
 }
  
 
@@ -254,6 +272,10 @@ EOF
   fi
   if [ "$is_vless" == "1" ]; then
     sed -i "s|EnableVless:.*|EnableVless: true|" ./config.yml
+  fi
+
+   if [ $aead_disable == "0" ]; then
+    sed -i 'N;18 i Environment="XRAY_VMESS_AEAD_FORCED=false"' /lib/systemd/system/docker.service
   fi
 }
 
