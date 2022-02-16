@@ -358,13 +358,13 @@ UpdateConfiguration_xrayr() {
   echo "Bắt đầu chạy dịch vụ DOKCER"
   docker-compose up -d
 }
-restart_backend_xrayr() {
+restart_xrayr() {
   cd ${cur_dir}
   docker-compose down
   docker-compose up -d
   echo "Khởi động lại thành công!"
 }
-delete_backend_xrayr() {
+delete_xrayr() {
   cd ${cur_dir}
   docker-compose down
   cd ~
