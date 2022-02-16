@@ -109,7 +109,7 @@ pre_install_docker_compose() {
   [ -z "${node_id}" ] && node_id=0
   read -p " Tên miền web : (https://aikocute.com/):" api_host
   [ -z "${api_host}" ] && api_host="https://aikocute.com"
-  read -p " Apikey (web API): (adminadminadminadminadmin)" api_key
+  read -p " Apikey (web API): (adminadminadminadminadmin):" api_key
   [ -z "${api_key}" ] && api_key="adminadminadminadminadmin"
   read -p "Giới hạn thiết bị :" DeviceLimit
   [ -z "${DeviceLimit}" ] && DeviceLimit="0"
@@ -138,18 +138,6 @@ pre_install_docker_compose() {
   else
     echo "type error, please try again"
     exit
-  fi
-  echo -e "[1] Có"
-  echo -e "[2] Không"
-  read -p "Có bật tls / xtls hay không (mặc định không):" is_tls
-  if [ "$is_tls" == "1" ]; then
-    read -p "Vui lòng nhập tên miền được phân giải cho máy này < cert_domain>:" cert_domain
-    echo -e "[1] Có"
-    echo -e "[2] Không"
-    read -p "Có bật xtls hay không (mặc định không):" is_xtls
-    echo -e "[1] Có"
-    echo -e "[2] Không"
-    read -p "Có bật vless (mặc định không):" is_vless
   fi
 }
  
