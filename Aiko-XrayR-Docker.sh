@@ -125,7 +125,7 @@ pre_install_docker_compose() {
   echo "-------------------------------"
   echo "Thiết bị tối đa là: ${DeviceLimit}"
   echo "-------------------------------"
-  echo -e "[1] SSpanel"
+echo -e "[1] SSpanel"
   echo -e "[2] V2board"
   read -p "Web đang sử dụng:" panel_num
   if [ "$panel_num" == "1" ]; then
@@ -150,6 +150,18 @@ pre_install_docker_compose() {
   else
     echo "type error, please try again"
     exit
+  fi
+  echo -e "[1] Có"
+  echo -e "[2] Không"
+  read -p "Có bật tls / xtls hay không (mặc định không):" is_tls
+  if [ "$is_tls" == "1" ]; then
+    read -p "Vui lòng nhập tên miền được phân giải cho máy này < cert_domain>:" cert_domain
+    echo -e "[1] Có"
+    echo -e "[2] Không"
+    read -p "Có bật xtls hay không (mặc định không):" is_xtls
+    echo -e "[1] Có"
+    echo -e "[2] Không"
+    read -p "Có bật vless (mặc định không):" is_vless
   fi
 }
  
@@ -248,6 +260,12 @@ EOF
   if [ "$is_tls" == "1" ]; then
     sed -i "s|CertMode:.*|CertMode: http|" ./config.yml
     sed -i "s|CertDomain:.*|CertDomain: \"${cert_domain}\"|" ./config.yml
+  fi
+  if [ "$is_xtls" == "1" ]; then
+    sed -i "s|EnableXTLS:.*|EnableXTLS: true|" ./config.yml
+  fi
+  if [ "$is_vless" == "1" ]; then
+    sed -i "s|EnableVless:.*|EnableVless: true|" ./config.yml
   fi
 }
 
