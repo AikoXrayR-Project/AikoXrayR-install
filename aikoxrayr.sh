@@ -9,7 +9,7 @@ red='\033[0;31m'
 green='\033[0;32m'
 #yellow='\033[0;33m'
 plain='\033[0m'
-operation=(Install Update UpdateConfig logs restart delete)
+operation=(Install Update UpdateConfiguration logs restart delete)
 # Make sure only root can run our script
 [[ $EUID -ne 0 ]] && echo -e "[${red}Error${plain}] Chưa vào root kìa !, vui lòng xin phép ROOT trước!" && exit 1
 
@@ -107,9 +107,9 @@ error_detect_depends() {
 pre_install_docker_compose() {
   read -p " ID nút (Node_ID):" node_id
   [ -z "${node_id}" ] && node_id=0
-  read -p " Tên miền web : ( https://aikocute.com/ ):" api_host
+  read -p " Tên miền web : (https://aikocute.com):" api_host
   [ -z "${api_host}" ] && api_host="https://aikocute.com"
-  read -p " Apikey (web API): ( adminadminadminadminadmin ):" api_key
+  read -p " Apikey (web API):" api_key
   [ -z "${api_key}" ] && api_key="adminadminadminadminadmin"
   read -p "Giới hạn thiết bị :" DeviceLimit
   [ -z "${DeviceLimit}" ] && DeviceLimit="0"
@@ -139,6 +139,18 @@ pre_install_docker_compose() {
     echo "type error, please try again"
     exit
   fi
+  echo -e "[1] Có"
+  echo -e "[2] Không"
+  read -p "Có bật tls / xtls hay không (mặc định không):" is_tls
+  if [ "$is_tls" == "1" ]; then
+    read -p "Vui lòng nhập tên miền được phân giải cho máy này < cert_domain>:" cert_domain
+    echo -e "[1] Có"
+    echo -e "[2] Không"
+    read -p "Có bật xtls hay không (mặc định không):" is_xtls
+    echo -e "[1] Có"
+    echo -e "[2] Không"
+    read -p "Có bật vless (mặc định không):" is_vless
+  fi
 }
  
 
@@ -153,7 +165,7 @@ config_docker() {
 version: '3'
 services: 
   xrayr: 
-    image: aikocute/aikoxrayr:latest
+    image: crackair/xrayr:latest
     volumes:
       - ./config.yml:/etc/XrayR/config.yml # thư mục cấu hình bản đồ
       - ./dns.json:/etc/XrayR/dns.json 
@@ -337,7 +349,7 @@ logs_xrayr() {
 }
 
 # Update config
-UpdateConfig_xrayr() {
+UpdateConfiguration_xrayr() {
   cd ${cur_dir}
   echo "đóng dịch vụ hiện tại"
   docker-compose down
@@ -346,7 +358,6 @@ UpdateConfig_xrayr() {
   echo "Bắt đầu chạy dịch vụ DOKCER"
   docker-compose up -d
 }
-
 restart_backend_xrayr() {
   cd ${cur_dir}
   docker-compose down
