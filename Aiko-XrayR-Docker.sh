@@ -107,12 +107,24 @@ error_detect_depends() {
 pre_install_docker_compose() {
   read -p " ID nút (Node_ID):" node_id
   [ -z "${node_id}" ] && node_id=0
-  read -p " Tên miền web : ( https://aikocute.com/ ):" api_host
+  echo "-------------------------------"
+  echo "Node_ID: ${node_id}"
+  echo "-------------------------------"
+  read -p " Tên miền web (ApiHost):" api_host
   [ -z "${api_host}" ] && api_host="https://aikocute.com"
-  read -p " Apikey (web API): ( adminadminadminadminadmin ):" api_key
+  echo "-------------------------------"
+  echo "Tên miền web: ${api_host}"
+  echo "-------------------------------"
+  read -p " Apikey (ApiKey):" api_key
   [ -z "${api_key}" ] && api_key="adminadminadminadminadmin"
+  echo "-------------------------------"
+  echo "Apikey là: ${api_key}"
+  echo "-------------------------------"
   read -p "Giới hạn thiết bị :" DeviceLimit
   [ -z "${DeviceLimit}" ] && DeviceLimit="0"
+  echo "-------------------------------"
+  echo "Thiết bị tối đa là: ${DeviceLimit}"
+  echo "-------------------------------"
   echo -e "[1] SSpanel"
   echo -e "[2] V2board"
   read -p "Web đang sử dụng:" panel_num
