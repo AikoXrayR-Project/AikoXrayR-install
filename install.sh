@@ -21,7 +21,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 systemctl start docker
 systemctl enable docker
 
-echo " ${green}đã cài đặt docker-compose${plain} "
+echo "đã cài đặt docker-compose"
 curl -fsSL https://get.docker.com | bash -s docker
 curl -L "https://github.com/docker/compose/releases/download/1.26.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
@@ -34,7 +34,7 @@ file="./config.yml"
 link="https://aikocute.com/"
 docker_compose_file="./docker-compose.yml"
 # Điền thông tin vào file config.yml
-echo "${green}Nếu không nhập gì thì nó sẽ là ký tự trống${plain}"
+echo "Nếu không nhập gì thì nó sẽ là ký tự trống"
 read -p "Vui lòng nhập Api Host ：" apihost
 echo "----------------------------"
 echo "API host của bạn là : $apihost"
@@ -64,14 +64,14 @@ sed -i "s|V2board|$paneltype|" $file
 sed -i "s|0|$DeviceLimit|" $file
 
 echo "Cấu hình hoàn tất"
-echo "${green}Khởi động XrayR Docker Compose${plain}" && docker-compose up -d
+echo "Khởi động XrayR Docker Compose" && docker-compose up -d
 
 echo "------------------------------"
-echo "${green}XrayR Docker Compose đã khởi động thành công - Bạn có thể sự dụng ngay bây giờ ${plain}"
+echo "XrayR Docker Compose đã khởi động thành công - Bạn có thể sự dụng ngay bây giờ"
 echo "-------------------------------"
-echo "${green}nếu cần cải tiến hay cập nhật thông tin gì vui lòng liên hệ tác giả để góp ý ${plain}"
+echo "nếu cần cải tiến hay cập nhật thông tin gì vui lòng liên hệ tác giả để góp ý"
 echo "-------------------------------"
-echo "${green} AikoCute ${plain}"
+echo "AikoCute"
 echo "-------------------------------"
 
 
