@@ -1,9 +1,0 @@
-version: '3'
-services: 
-  xrayr: 
-    image: aikocute/aikoxrayr:latest
-    volumes:
-      - ./config.yml:/etc/XrayR/config.yml # thư mục cấu hình bản đồ
-      - ./dns.json:/etc/XrayR/dns.json 
-    restart: always
-    network_mode: host
