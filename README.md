@@ -30,24 +30,20 @@ Vào thư mục này để cấu hình
 ```
 Vì chạy docker nên mình cho setup config tự động
 ```
-1: dòng `PanelType` : ví dụ `V2board`, `SSpanel`,... (chữ đầu viết hoa)
 
-2: dòng `ApiHost` : Link web ví dụ `https://domain.com/`
+1: dòng `ApiHost` : Link web ví dụ `https://domain.com/`
 
-3: dòng `ApiKey` : key của web (lấy trên web admin)
+2: dòng `ApiKey` : key của web (lấy trên web admin)
 
-4: dòng `NodeID` : `ID` server (tự đặt)
+3: dòng `NodeID` : `ID` server (tự đặt)
+
+4: dòng `PanelType` : ví dụ `V2board`, `SSpanel`,... (chữ đầu viết hoa)
 
 5: dòng `devicelimit` : `SL` nhập số người mà bạn muốn sever chạy tối đa
 
 ```
 Mình đã fix lỗi zalo sẵn trên docker server nên không cần làm gì nữa nhé
 ```
-Nếu bị lỗi xrayr không chạy thì bỏ dòng `DisableSniffing: true` đi nhé 
-
-Dòng nào có ngoặc kép nhớ để ý viết trong ngoặc kép
-
-Cấu hình xong nhớ khởi động lại xrayr nhé.
 
 # XrayR
 
