@@ -41,10 +41,25 @@ docker_compose_file="./docker-compose.yml"
 # Điền thông tin vào file config.yml
 echo "${green}Nếu không nhập gì thì nó sẽ là ký tự trống${plain}"
 read -p "Vui lòng nhập Api Host ：" apihost
+echo "----------------------------"
+echo "API host của bạn là : $apihost"
+echo "----------------------------"
 read -p "Vui lòng nhập Api Key："  apikey
+echo "----------------------------"
+echo "API key của bạn là : $apikey"
+echo "----------------------------"
 read -p "Vui lòng nhập ID nút：" nodeid
+echo "----------------------------"
+echo "ID nút của bạn là : $nodeid"
+echo "----------------------------"
 read -p "Vui lòng nhập PanelType (Panel type: SSpanel, V2board)：" paneltype
+echo "----------------------------"
+echo "Panel type của bạn là : $paneltype"
+echo "----------------------------"
 read -p "Giới hạn thiết bị sử dụng :" DeviceLimit
+echo "----------------------------"
+echo "Giới hạn thiết bị sử dụng của bạn là : $DeviceLimit"
+echo "----------------------------"
 
 # ghi thông tin
 sed -i "s|$link|$apihost|" $file
@@ -56,13 +71,13 @@ sed -i "s|0|$DeviceLimit|" $file
 echo "Cấu hình hoàn tất"
 echo "${green}Khởi động XrayR Docker Compose${plain}" && docker-compose up -d
 
-echo "-----------------------------------------------------------------------------------------------"
+echo "------------------------------"
 echo "${green}XrayR Docker Compose đã khởi động thành công - Bạn có thể sự dụng ngay bây giờ ${plain}"
-echo "-----------------------------------------------------------------------------------------------"
+echo "-------------------------------"
 echo "${green}nếu cần cải tiến hay cập nhật thông tin gì vui lòng liên hệ tác giả để góp ý ${plain}"
-echo "-----------------------------------------------------------------------------------------------"
+echo "-------------------------------"
 echo "${green} AikoCute ${plain}"
-echo "-----------------------------------------------------------------------------------------------"
+echo "-------------------------------"
 
 
  
