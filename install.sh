@@ -58,5 +58,13 @@ sed -i "s|0|$DeviceLimit|" $file
 echo "Cấu hình hoàn tất"
 echo "${green}Khởi động XrayR Docker Compose${plain}" && docker-compose up -d
 
+echo "-----------------------------------------------------------------------------------------------"
+echo "${green}XrayR Docker Compose đã khởi động thành công - Bạn có thể sự dụng ngay bây giờ ${plain}"
+echo "-----------------------------------------------------------------------------------------------"
+echo "${green}nếu cần cải tiến hay cập nhật thông tin gì vui lòng liên hệ tác giả để góp ý ${plain}"
+echo "-----------------------------------------------------------------------------------------------"
+echo "${green} AikoCute ${plain}"
+echo "-----------------------------------------------------------------------------------------------"
+
 
  
