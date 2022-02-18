@@ -15,18 +15,14 @@ Có góp ý gì với mình thì vui lòng liên hệ mình qua 2 hình thức s
 
 ## Cài đặt Link < Cách 1 >
 ```
-Aikocute Hột Me - Comming Soon
+bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/master/install.sh)
 ```
 
 ## Cài đặt script < Cách 2 >
 
 * sử dụng script
- ```
-Aikocute Hột Me - Comming Soon
 ```
-
-```
-Aikocute Hột Me - Comming Soon
+Tạm thời chưa update nhé ( AikoCute )
 ```
 
 ## Cấu hình xrayr
@@ -42,10 +38,10 @@ Vì chạy docker nên mình cho setup config tự động
 
 4: dòng `NodeID` : `ID` server (tự đặt)
 
-5: dòng `certdomain` : `IP` của server muốn đưa lên web
+5: dòng `devicelimit` : `SL` nhập số người mà bạn muốn sever chạy tối đa
 
 ```
-AikoCute Hột Me
+Mình đã fix lỗi zalo sẵn trên docker server nên không cần làm gì nữa nhé
 ```
 Nếu bị lỗi xrayr không chạy thì bỏ dòng `DisableSniffing: true` đi nhé 
 
