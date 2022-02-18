@@ -4,7 +4,7 @@
 [[ $EUID -ne 0 ]] && echo -e "${red}Lỗi：${plain} Tập lệnh này phải được chạy với tư cách người dùng root!\n" && exit 1
 
 
-echo " ${green}bắt đầu cài đặt docker${plain}"
+echo "bắt đầu cài đặt docker"
 sudo apt-get update
 sudo apt-get install \
     apt-transport-https \
