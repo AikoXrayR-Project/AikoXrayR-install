@@ -34,8 +34,8 @@ curl -L "https://github.com/docker/compose/releases/download/1.26.1/docker-compo
 chmod +x /usr/local/bin/docker-compose
 
 echo "Cài đặt config file"
-suijishu=`cat /dev/urandom | tr -dc '0-9a-z' | head -c 15`
-git clone https://github.com/AikoCute/XrayR-release /tmp/$suijishu && cd /tmp/$suijishu
+aikocute=`cat /dev/urandom | tr -dc '0-9a-z' | head -c 15`
+git clone https://github.com/AikoCute/XrayR-release /tmp/$aikocute && cd /tmp/$aikocute
 sleep 5s
 file="./config.yml"
 link="https://aikocute.com/"
