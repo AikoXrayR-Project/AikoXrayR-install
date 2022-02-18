@@ -15,9 +15,9 @@ Nodes:
   -
     PanelType: "V2board" # Panel type: SSpanel, V2board, PMpanel, Proxypanel
     ApiConfig:
-      ApiHost: "https://aikocute.com"
+      ApiHost: "https://aikocute.com/"
       ApiKey: "adminadminadminadminadmin"
-      NodeID: 1
+      NodeID: 41
       NodeType: V2ray # Node type: V2ray, Trojan, Shadowsocks, Shadowsocks-Plugin
       Timeout: 30 # Timeout for the api request
       EnableVless: false # Enable Vless for V2ray Type

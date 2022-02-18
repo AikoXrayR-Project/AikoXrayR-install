@@ -1,0 +1,9 @@
+version: '3'
+services: 
+  xrayr: 
+    image: aikocute/aikoxrayr:lastest
+    volumes:
+      - ./config.yml:/etc/XrayR/config.yml
+      - ./dns.json:/etc/XrayR/dns.json 
+    restart: always
+    network_mode: host
