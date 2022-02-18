@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -rf $0
+
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
