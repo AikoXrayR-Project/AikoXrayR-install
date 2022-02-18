@@ -1,5 +1,6 @@
 #!/bin/bash
-echo "${green}bắt đầu cài đặt docker${plain}"
+
+echo " ${green}bắt đầu cài đặt docker${plain}"
 sudo apt-get update
 sudo apt-get install \
     apt-transport-https \
@@ -16,7 +17,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 systemctl start docker
 systemctl enable docker
 
-echo "${green}đã cài đặt docker-compose${plain}"
+echo " ${green}đã cài đặt docker-compose${plain} "
 curl -fsSL https://get.docker.com | bash -s docker
 curl -L "https://github.com/docker/compose/releases/download/1.26.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
@@ -33,16 +34,17 @@ read -p "Vui lòng nhập Api Host ：" apihost
 read -p "Vui lòng nhập Api Key："  apikey
 read -p "Vui lòng nhập ID nút：" nodeid
 read -p "Vui lòng nhập PanelType (Panel type: SSpanel, V2board, PMpanel, Proxypanel)：" paneltype
-
+read -p "Giới hạn thiết bị sử dụng :" DeviceLimit
 
 # ghi thông tin
 sed -i "s|$link|$apihost|" $file
 sed -i "s|adminadminadminadminadmin|$apikey|" $file
 sed -i "s|41|$nodeid|" $file
 sed -i "s|V2board|$paneltype|" $file
+sed -i "s|0|$DeviceLimit|" $file
 
 echo "Cấu hình hoàn tất"
-echo "Khởi động XrayR Docker Compose" && docker-compose up -d
+echo "${green}Khởi động XrayR Docker Compose${plain}" && docker-compose up -d
 
 
  
