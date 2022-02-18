@@ -7,8 +7,8 @@ Tìm mã nguồn tại đây: [XrayR-project/XrayR](https://github.com/AikoCute/
 
 Có góp ý gì với mình thì vui lòng liên hệ mình qua 2 hình thức sau để mình cải tiến và cập nhật nhé 
 
-[![](https://img.shields.io/badge/ZaloChat-@AikoCuteZalo-blue.svg)](https://zalo.me/g/tkhoxp474)
-[![](https://img.shields.io/badge/TeleChat-@AikocuteTele-blue.svg)](https://t.me/aikocutehotme)
+[![](https://img.shields.io/badge/ZaloChat-@AikoCuteZalo-blue.svg)](https://zalo.me/0368629364)
+[![](https://img.shields.io/badge/TeleChat-@AikocuteTele-blue.svg)](https://t.me/ẠikoCute_Player)
 
 ## Hướng dẫn chi tiết
 [Hướng dẫn](https://xrayr.aikocute.com)
