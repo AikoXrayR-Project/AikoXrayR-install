@@ -27,7 +27,7 @@ Aikocute Hột Me - Comming Soon
 ## Cấu hình xrayr
 Vào thư mục này để cấu hình
 ```
-vi /etc/XrayR/config.yml
+Vì chạy docker nên mình cho setup config tự động
 ```
 1: dòng `PanelType` : ví dụ `V2board`, `SSpanel`,... (chữ đầu viết hoa)
 
