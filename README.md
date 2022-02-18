@@ -62,6 +62,8 @@ Tập lệnh gắn một cú nhấp chuột của trình docker phụ trợ Xray
 > Địa chỉ dự án và tài liệu trợ giúp:  https://github.com/AikoCute/XrayR-release
 >
 > Địa chỉ dự án XrayR: https://github.com/AikoCute/XrayR
+>
+> Hướng dẫn chi tiết : https://github.com/AikoCute/XrayR-doc
 
 * Để mở nhiều phần mềm phụ trợ, bạn chỉ cần tạo một thư mục mới và tải tập lệnh xuống thư mục này để chạy
 
