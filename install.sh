@@ -1,15 +1,13 @@
 #!/bin/bash
-rm -rf $0
 
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
 plain='\033[0m'
 
-cur_dir=$(pwd)
-
 # check root
 [[ $EUID -ne 0 ]] && echo -e "${red}Lỗi：${plain} Tập lệnh này phải được chạy với tư cách người dùng root!\n" && exit 1
+
 
 echo " ${green}bắt đầu cài đặt docker${plain}"
 sudo apt-get update
