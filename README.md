@@ -15,7 +15,7 @@ Có góp ý gì với mình thì vui lòng liên hệ mình qua 2 hình thức s
 
 ## Cài đặt Link < Cách 1 >
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/master/Aiko-XrayR-Docker.sh)
 ```
 
 ## Cài đặt script < Cách 2 >
