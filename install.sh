@@ -1,4 +1,15 @@
 #!/bin/bash
+rm -rf $0
+
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+plain='\033[0m'
+
+cur_dir=$(pwd)
+
+# check root
+[[ $EUID -ne 0 ]] && echo -e "${red}Lỗi：${plain} Tập lệnh này phải được chạy với tư cách người dùng root!\n" && exit 1
 
 echo " ${green}bắt đầu cài đặt docker${plain}"
 sudo apt-get update
@@ -30,10 +41,11 @@ file="./config.yml"
 link="https://aikocute.com/"
 docker_compose_file="./docker-compose.yml"
 # Điền thông tin vào file config.yml
+echo "${green}Nếu không nhập gì thì nó sẽ là ký tự trống${plain}"
 read -p "Vui lòng nhập Api Host ：" apihost
 read -p "Vui lòng nhập Api Key："  apikey
 read -p "Vui lòng nhập ID nút：" nodeid
-read -p "Vui lòng nhập PanelType (Panel type: SSpanel, V2board, PMpanel, Proxypanel)：" paneltype
+read -p "Vui lòng nhập PanelType (Panel type: SSpanel, V2board)：" paneltype
 read -p "Giới hạn thiết bị sử dụng :" DeviceLimit
 
 # ghi thông tin
