@@ -22,7 +22,8 @@ bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/master/
 
 * sử dụng script
 ```
-Tạm thời chưa update nhé ( AikoCute )
+mkdir xrayr1 && cd xrayr1
+wget --no-check-certificate https://raw.githubusercontent.com/AikoCute/XrayR-release/master/Aiko-XrayR-Docker.sh && bash Aiko-XrayR-Docker.sh
 ```
 
 ## Cấu hình xrayr
