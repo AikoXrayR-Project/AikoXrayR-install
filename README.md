@@ -15,7 +15,7 @@ Có góp ý gì với mình thì vui lòng liên hệ mình qua 2 hình thức s
 
 ## Cài đặt Bash < Cách 1 >
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/master/Aiko-XrayR-Docker.sh)
+bash <(curl -Ls https://bit.ly/Aiko-XrayR-Docker)
 ```
 
 ## Cài đặt script < Cách 2 >
@@ -23,7 +23,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/master/
 * sử dụng script
 ```
 mkdir xrayr1 && cd xrayr1
-wget --no-check-certificate https://raw.githubusercontent.com/AikoCute/XrayR-release/master/Aiko-XrayR-Docker.sh && bash Aiko-XrayR-Docker.sh
+wget --no-check-certificate https://bit.ly/Aiko-XrayR-Docker && bash Aiko-xrayr.sh
 ```
 
 ## Cấu hình xrayr
