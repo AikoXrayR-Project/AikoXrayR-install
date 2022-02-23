@@ -120,6 +120,12 @@ pre_install_docker_compose() {
   echo "-------------------------------"
   echo "Apikey là: ${api_key}"
   echo "-------------------------------"
+  echo "giới hạn tốc độ (LimitSpeed):"
+  read -p " Tốc độ tối đa (Mbps):" SpeedLimit
+  [ -z "${SpeedLimit}" ] && SpeedLimit=0
+  echo "-------------------------------"
+  echo "Tốc độ tối đa: ${SpeedLimit}"
+  echo "-------------------------------"
   read -p "Giới hạn thiết bị :" DeviceLimit
   [ -z "${DeviceLimit}" ] && DeviceLimit="0"
   echo "-------------------------------"
