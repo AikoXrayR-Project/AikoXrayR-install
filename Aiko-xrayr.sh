@@ -183,7 +183,7 @@ config_docker() {
 version: '3'
 services: 
   xrayr: 
-    image: aikocute/aikoxrayr:Latest
+    image: aikocute/xrayr:latest
     volumes:
       - ./config.yml:/etc/XrayR/config.yml # thư mục cấu hình bản đồ
       - ./dns.json:/etc/XrayR/dns.json 
