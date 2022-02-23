@@ -263,6 +263,7 @@ EOF
   sed -i "s|PanelType:.*|PanelType: \"${panel_type}\"|" ./config.yml
   sed -i "s|NodeType:.*|NodeType: ${node_type}|" ./config.yml
   sed -i "s|DeviceLimit:.*|DeviceLimit: ${DeviceLimit}|" ./config.yml
+  sed -i "s|SpeedLimit:.*|SpeedLimit: ${SpeedLimit}|" ./config.yml
   if [ "$is_tls" == "1" ]; then
     sed -i "s|CertMode:.*|CertMode: http|" ./config.yml
     sed -i "s|CertDomain:.*|CertDomain: \"${cert_domain}\"|" ./config.yml
