@@ -122,7 +122,7 @@ pre_install_docker_compose() {
   echo "-------------------------------"
   echo "giới hạn tốc độ (LimitSpeed):"
   read -p " Tốc độ tối đa (Mbps):" SpeedLimit
-  [ -z "${SpeedLimit}" ] && SpeedLimit=0
+  [ -z "${SpeedLimit}" ] && SpeedLimit="0"
   echo "-------------------------------"
   echo "Tốc độ tối đa: ${SpeedLimit}"
   echo "-------------------------------"
