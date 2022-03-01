@@ -67,12 +67,8 @@ docker-compose up -d
 
 
 ## Cấu hình xrayr
-Vào thư mục này để cấu hình
-```
-Vì chạy docker nên mình cho setup config tự động
-```
 
-1: dòng `ApiHost` : Link web ví dụ `https://domain.com/`
+1: dòng `ApiHost` : Link web ví dụ `https://aikocute.com/`
 
 2: dòng `ApiKey` : key của web (lấy trên web admin)
 
