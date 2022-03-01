@@ -12,7 +12,6 @@ Có góp ý gì với mình thì vui lòng liên hệ mình qua 2 hình thức s
 
 ## Hướng dẫn chi tiết
 [Hướng dẫn](https://xrayr.aikocute.com)
-
 # Một cài đặt chính < Cách 1 >
 
 ```
@@ -47,7 +46,7 @@ chmod +x /usr/local/bin/docker-compose
 ```
 1. tải XrayR về VPS để cài đặt
  ```
- git clone https://github.com/herotbty/XrayR-release
+ git clone https://github.com/AikoCute/XrayR-release
  ```
 2. Truy cập vào thư mục vừa tải
  ```
