@@ -119,6 +119,10 @@ update() {
     fi
 }
 
+speedtest() {
+    wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
+}
+
 config() {
     echo "XrayR sẽ tự động khởi động lại sau khi sửa đổi cấu hình"
     nano /etc/XrayR/config.yml
@@ -406,10 +410,11 @@ show_menu() {
 ————————————————
   ${green}9.${plain} Đặt XrayR để bắt đầu tự động
  ${green}10.${plain} Hủy tự động khởi động XrayR
+ ${green}11.${plain} Speedtest VPS 
 ————————————————
- ${green}11.${plain} Một cú nhấp chuột cài đặt bbr (hạt nhân mới nhất)
- ${green}12.${plain} Xem các phiên bản XrayR 
- ${green}13.${plain} Nâng cấp Tập lệnh Bảo trì
+ ${green}12.${plain} Một cú nhấp chuột cài đặt bbr (hạt nhân mới nhất)
+ ${green}13.${plain} Xem các phiên bản XrayR 
+ ${green}14.${plain} Nâng cấp Tập lệnh Bảo trì
  "
  # Cập nhật tiếp theo có thể được thêm vào chuỗi trên
     show_status
@@ -438,13 +443,13 @@ show_menu() {
         ;;
         10) check_install && disable
         ;;
-        11) install_bbr
+        11) speedtest
         ;;
-        12) check_install && show_XrayR_version
+        12) install_bbr
         ;;
-        13) update_shell
+        13) check_install && show_XrayR_version
         ;;
-        14) update_aiko
+        14) update_shell
         ;;
         *) echo -e "${red}Vui lòng nhập số chính xác [0-12]${plain}"
         ;;
