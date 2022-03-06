@@ -22,7 +22,7 @@ Nodes:
       Timeout: 30 # Timeout for the api request
       EnableVless: false # Enable Vless for V2ray Type
       EnableXTLS: false # Enable XTLS for V2ray and Trojan
-      SpeedLimit: 150 # Mbps, Local settings will replace remote settings, 0 means disable
+      SpeedLimit: 200 # Mbps, Local settings will replace remote settings, 0 means disable
       DeviceLimit: 2 # Local settings will replace remote settings, 0 means disable
       RuleListPath: # /etc/XrayR/rulelist Path to local rulelist file
     ControllerConfig:
