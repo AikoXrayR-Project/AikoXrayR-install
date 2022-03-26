@@ -1,7 +1,7 @@
 version: '3'
 services: 
   xrayr: 
-    image: aikocute/xrayr:latest
+    image: aikocute/aikocutexrayr:latest
     volumes:
       - ./config:/etc/XrayR/ #AikoCute
     restart: always
