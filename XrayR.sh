@@ -121,7 +121,7 @@ update() {
 
 config() {
     echo "XrayR tự động cố gắng khởi động lại sau khi sửa đổi cấu hình"
-    vi /etc/XrayR/config.yml
+    nano /etc/XrayR/config.yml
     sleep 2
     check_status
     case $? in
