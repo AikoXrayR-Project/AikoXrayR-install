@@ -388,6 +388,8 @@ show_usage() {
     echo "  XrayR config             - Hiển thị nội dung tệp cấu hình"
     echo "  XrayR install            - Cài đặt XrayR"
     echo "  XrayR uninstall          - Gỡ cài đặt XrayR"
+    echo "  XrayR speedtest          - Thử nghiệm tốc độ"
+    echo "  XrayR bbr                - install BBR"
     echo "  XrayR version            - Xem các phiên bản XrayR"
     echo "  AikoCute Hotme           - Lệnh Này méo có đâu nên đừng sài"
     echo "------------------------------------------"
@@ -487,6 +489,8 @@ if [[ $# > 0 ]]; then
         "update_shell") update_shell
         ;;
         "speedtest") speedtest
+        ;;
+        "bbr") install_bbr
         ;;
         *) show_usage
     esac
