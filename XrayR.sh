@@ -156,9 +156,9 @@ uninstall() {
     systemctl reset-failed
     rm /etc/XrayR/ -rf
     rm /usr/local/XrayR/ -rf
-
+    rm /usr/bin/XrayR -f 
     echo ""
-    echo -e "Gỡ cài đặt thành công và nếu bạn muốn xóa tập lệnh này, hãy chạy sau khi thoát khỏi tập lệnh ${green}rm /usr/bin/XrayR -f${plain} Để xóa"
+    echo -e "XrayR đã được gỡ cài đặt hoàn toàn"
     echo ""
 
     if [[ $# == 0 ]]; then
