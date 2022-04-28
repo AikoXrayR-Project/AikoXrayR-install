@@ -84,7 +84,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/master/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/XrayR-release/data/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -348,7 +348,7 @@ show_status() {
 }
 
 speedtest() {
-    wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
+    wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/data/superbench.sh | bash
 }
 
 
