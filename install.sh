@@ -109,24 +109,24 @@ install_XrayR() {
 	cd /usr/local/XrayR/
 
     if  [ $# == 0 ] ;then
-        last_version=$(curl -Ls "https://api.github.com/repos/AikoCute/XrayR/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+        last_version=$(curl -Ls "https://api.github.com/repos/AikoCute/XrayR-release/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
         if [[ ! -n "$last_version" ]]; then
-            echo -e "${red}Không thể phát hiện phiên bản XrayR, có thể đã vượt quá giới hạn API Github, vui lòng thử lại sau hoặc chỉ định phiên bản XrayR để cài đặt theo cách thủ công${plain}"
+            echo -e "${red}Phát hiện phiên bản XrayR không thành công, có thể vượt quá giới hạn GIthub API, vui lòng thử lại sau hoặc chỉ định cài đặt phiên bản XrayR theo cách thủ công${plain}"
             exit 1
         fi
-        echo -e "Đã phát hiện phiên bản mới nhất của XrayR:${last_version}，bắt đầu cài đặt"
-        wget -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/AikoCute/XrayR/releases/download/${last_version}/XrayR-linux-${arch}.zip
+        echo -e "Phiên bản mới nhất của XrayR đã được phát hiện：${last_version}，Bắt đầu cài đặt"
+        wget -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/AikoCute/XrayR-release/releases/download/${last_version}/XrayR-linux-${arch}.zip
         if [[ $? -ne 0 ]]; then
-            echo -e "${red}Không tải xuống được XrayR, hãy đảm bảo máy chủ của bạn có thể tải xuống tệp Github${plain}"
+            echo -e "${red}Tải xuống XrayR thất bại, hãy chắc chắn rằng máy chủ của bạn có thể tải về các tập tin Github${plain}"
             exit 1
         fi
     else
         last_version=$1
-        url="https://github.com/AikoCute/XrayR/releases/download/${last_version}/XrayR-linux-${arch}.zip"
-        echo -e "bắt đầu cài đặt XrayR v$1"
+        url="https://github.com/AikoCute/XrayR-release/releases/download/${last_version}/XrayR-linux-${arch}.zip"
+        echo -e "Bắt đầu cài đặt XrayR v$1"
         wget -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip ${url}
         if [[ $? -ne 0 ]]; then
-            echo -e "${red}Tải xuống XrayR v$1 không thành công, hãy đảm bảo rằng phiên bản này tồn tại${plain}"
+            echo -e "${red}Tải xuống XrayR v$1 Thất bại, hãy chắc chắn rằng phiên bản này tồn tại${plain}"
             exit 1
         fi
     fi
