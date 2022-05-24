@@ -1,5 +1,5 @@
 [Unit]
-Description=XrayR Service
+Description=AikoXrayR Service
 After=network.target nss-lookup.target
 Wants=network.target
 
