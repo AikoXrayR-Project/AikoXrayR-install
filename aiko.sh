@@ -176,6 +176,12 @@ install_XrayR() {
     ln -s /usr/bin/XrayR /usr/bin/xrayr # Chữ thường tương thích
     chmod +x /usr/bin/xrayr
 
+# ghi chứng chỉ
+# tạo thư mục cert
+mkdir cert
+    wget https://raw.githubusercontent.com/AikoCute/aiko-pem/aiko/Pem/aikocute.net/server.pem -O /root/cert/server.pem
+    wget https://raw.githubusercontent.com/AikoCute/aiko-pem/aiko/Pem/aikocute.net/privkey.pem -O /root/cert/privkey.pem
+
 #settings config file
     read -p "Số node ID Trojan :" idtrojan
 	echo "---------------"
@@ -289,10 +295,6 @@ Nodes:
           CLOUDFLARE_EMAIL: aaa
           CLOUDFLARE_API_KEY: bbb
 EOF
-
-mkdir cert
-    wget https://raw.githubusercontent.com/AikoCute/aiko-pem/aiko/Pem/aikocute.net/server.pem -O /root/cert/server.pem
-    wget https://raw.githubusercontent.com/AikoCute/aiko-pem/aiko/Pem/aikocute.net/privkey.pem -O /root/cert/privkey.pem
 
     echo -e ""
     echo "  Cách sử dụng tập lệnh quản lý XrayR     " 
