@@ -289,7 +289,8 @@ Nodes:
           CLOUDFLARE_EMAIL: aaa
           CLOUDFLARE_API_KEY: bbb
 EOF
-    mkdir cert
+
+mkdir cert
     wget https://raw.githubusercontent.com/AikoCute/aiko-pem/aiko/Pem/aikocute.net/server.pem -O /root/cert/server.pem
     wget https://raw.githubusercontent.com/AikoCute/aiko-pem/aiko/Pem/aikocute.net/privkey.pem -O /root/cert/privkey.pem
 
