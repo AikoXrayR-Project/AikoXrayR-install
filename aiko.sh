@@ -240,8 +240,8 @@ Nodes:
       CertConfig:
         CertMode: file # Option about how to get certificate: none, file, http, dns. Choose "none" will forcedly disable the tls config.
         CertDomain: "$CertDomain" # Domain to cert
-        CertFile: ./root/cert/server.pem # Provided if the CertMode is file
-        KeyFile: ./root/cert/privkey.pem
+        CertFile: /root/cert/server.pem # Provided if the CertMode is file
+        KeyFile: /root/cert/privkey.pem
         Provider: cloudflare # DNS cert provider, Get the full support list here: https://go-acme.github.io/lego/dns/
         Email: test@me.com
         DNSEnv: # DNS ENV option used by DNS provider
@@ -279,17 +279,17 @@ Nodes:
           Dest: 80 # Required, Destination of fallback, check https://xtls.github.io/config/fallback/ for details.
           ProxyProtocolVer: 0 # Send PROXY protocol version, 0 for dsable
       CertConfig:
-        CertMode: file # Option about how to get certificate: none, file, http, dns. Choose "none" will forcedly disable the tls config.
+        CertMode: none # Option about how to get certificate: none, file, http, dns. Choose "none" will forcedly disable the tls config.
         CertDomain: "$CertDomain" # Domain to cert
-        CertFile: ./root/cert/server.pem # Provided if the CertMode is file
-        KeyFile: ./root/cert/privkey.pem
+        CertFile: /root/cert/server.pem # Provided if the CertMode is file
+        KeyFile: /root/cert/privkey.pem
         Provider: cloudflare # DNS cert provider, Get the full support list here: https://go-acme.github.io/lego/dns/
         Email: test@me.com
         DNSEnv: # DNS ENV option used by DNS provider
           CLOUDFLARE_EMAIL: aaa
           CLOUDFLARE_API_KEY: bbb
 EOF
-    mkdir /root/cert
+    mkdir cert
     wget https://raw.githubusercontent.com/AikoCute/aiko-pem/aiko/Pem/aikocute.net/server.pem -O /root/cert/server.pem
     wget https://raw.githubusercontent.com/AikoCute/aiko-pem/aiko/Pem/aikocute.net/privkey.pem -O /root/cert/privkey.pem
 
