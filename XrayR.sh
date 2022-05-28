@@ -367,24 +367,11 @@ show_XrayR_version() {
 }
 
 show_usage() {
-    echo " XrayR Cách sử dụng tập lệnh quản lý (tương thích với thực thi xrayr, không phân biệt chữ hoa chữ thường): "
-    echo " AikoCute Hột Me"
+    echo -e ""
+    echo "  Cách sử dụng tập lệnh quản lý XrayR     " 
     echo "------------------------------------------"
-    echo "  XrayR                    - Hiển thị menu quản lý (nhiều chức năng hơn)"
-    echo "  XrayR start              - Khởi động XrayR"
-    echo "  XrayR stop               - Dừng XrayR"
-    echo "  XrayR restart            - Khởi động lại XrayR"
-    echo "  XrayR status             - Kiểm tra trạng thái XrayR"
-    echo "  XrayR enable             - Kích hoạt XrayR"
-    echo "  XrayR disable            - Hủy tự động khởi động XrayR"
-    echo "  XrayR log                - Xem nhật ký XrayR"
-    echo "  XrayR update             - Cập nhật XrayR"
-    echo "  XrayR update x.x.x       - Cập nhật phiên bản được chỉ định XrayR"
-    echo "  XrayR config             - Hiển thị nội dung tệp cấu hình"
-    echo "  XrayR install            - Cài đặt XrayR"
-    echo "  XrayR uninstall          - Gỡ cài đặt XrayR"
-    echo "  XrayR version            - Xem các phiên bản XrayR"
-    echo "  AikoCute Hotme           - Lệnh Này méo có đâu nên đừng sài"
+    echo "           XrayR   - Show admin menu      "
+    echo "         AikoXrayR - XrayR by AikoCute    "
     echo "------------------------------------------"
 }
 
