@@ -7,7 +7,7 @@
 [![](https://img.shields.io/badge/Telegram-group-green?style=flat-square)](https://t.me/aikocutehotme)
 [![](https://img.shields.io/badge/Telegram-channel-blue?style=flat-square)](https://t.me/AikoCute_Support)
 [![](https://img.shields.io/github/downloads/AikoXrayR-Project/XrayR/total.svg?style=flat-square)](https://github.com/AikoXrayR-Project/XrayR/releases)
-[![](https://img.shields.io/github/v/release/AikoXrayR-Project/XrayR/?style=flat-square)](https://github.com/AikoXrayR-Project/XrayR//releases)
+[![](https://img.shields.io/github/v/release/AikoXrayR-Project/XrayR/?style=flat-square)](https://github.com/AikoXrayR-Project/XrayR/releases)
 [![docker](https://img.shields.io/docker/v/aikocute/xrayr?label=Docker%20image&sort=semver)](https://hub.docker.com/r/aikocute/xrayr)
 [![Build and Release](https://github.com/AikoXrayR-Project/XrayR/actions/workflows/release.yml/badge.svg)](https://github.com/AikoXrayR-Project/XrayR/actions/workflows/release.yml)
 </div>
