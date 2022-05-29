@@ -25,44 +25,8 @@ Có góp ý gì với mình thì vui lòng liên hệ mình qua 2 hình thức s
 [![](https://img.shields.io/badge/TeleChat-@AikocuteTele-blue.svg)](https://t.me/AikoCute_Player)
 
 ## Hướng dẫn chi tiết
-[Hướng dẫn](https://xrayr.aikocute.com)
-# Một cài đặt chính < Cách 1 >
-```
-< Aiko > 
-```
-# Cài đặt Docker < Cách 2 >
-
-```
-< Aiko >
-```
-
-# Cài đặt Docker-compile
-0. Cài Đặt docker-compose: 
-```
-< Aiko >
-```
-1. tải XrayR về VPS để cài đặt
- ```
- < Aiko >
- ```
-2. Truy cập vào thư mục vừa tải
- ```
- < Aiko >
- ```
-3. Chỉnh sửa cấu hình.
-Định dạng cơ bản của tệp cấu hình như sau. Nhiều bảng và nhiều thông tin cấu hình nút có thể được thêm vào cùng một lúc trong Nodes, chỉ cần thêm các mục Nodes ở cùng một định dạng.
-4. bắt đầu docker： 
-```
-< Aiko >
-```
-
-## Nâng cấp soạn thư Docker
-Thực thi trong thư mục docker-compo.yml：
-```
-< Aiko >
-```
-
-
+[Hướng dẫn](https://aikocute.com)
+` đọc hướng dẫn sách giáo khoa của Aiko `
 ## Cấu hình xrayr
 
 1: dòng `ApiHost` : Link web ví dụ `https://aikocute.com/`
