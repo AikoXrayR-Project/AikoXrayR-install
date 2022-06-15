@@ -57,11 +57,11 @@ File Config Của XrayR cho sever Việt Nam < AikoCuteHotMe>
 
 Tập lệnh gắn một cú nhấp chuột của trình docker phụ trợ XrayR
 
-> Địa chỉ dự án và tài liệu trợ giúp:  https://github.com/AikoCute/XrayR-release
+> Bản Cài đặt Release:  https://github.com/AikoXrayR-Project/AikoXrayR-install
 >
-> Địa chỉ dự án XrayR: https://github.com/AikoCute/XrayR
+> Bản cài đặt docker : https://github.com/AikoXrayR-Project/AikoXrayR-Dockerinstall
 >
-> Hướng dẫn chi tiết : https://github.com/AikoCute/XrayR-doc
+> Địa chỉ dự án XrayR: https://github.com/AikoXrayR-Project/XrayR
 
 * Để mở nhiều phần mềm phụ trợ, bạn chỉ cần tạo một thư mục mới và tải tập lệnh xuống thư mục này để chạy
 
