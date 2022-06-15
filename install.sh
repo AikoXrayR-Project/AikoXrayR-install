@@ -109,7 +109,7 @@ install_XrayR() {
 	cd /usr/local/XrayR/
     
     if  [ $# == 0 ] ;then
-        last_version=$(curl -Ls "https://api.github.com/repos/AikoXrayR-Project/XrayR/releases" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+        last_version=$(curl -Ls "https://api.github.com/repos/AikoXrayR-Project/XrayR/releases/69543745" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
         if [[ ! -n "$last_version" ]]; then
             echo -e "${red}Phát hiện phiên bản XrayR không thành công, có thể vượt quá giới hạn GIthub API, vui lòng thử lại sau hoặc chỉ định cài đặt phiên bản XrayR theo cách thủ công${plain}"
             exit 1
