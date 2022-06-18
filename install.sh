@@ -115,7 +115,7 @@ install_XrayR() {
             exit 1
         fi
         echo -e "Phiên bản mới nhất của XrayR đã được phát hiện：${last_version}，Bắt đầu cài đặt"
-        wget -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/AikoXrayR-Project/XrayR/releases/download/1.4.0.3/AikoXrayR-linux-${arch}.zip
+        wget -N --no-check-certificate -O /usr/local/XrayR/AikoXrayR-linux.zip https://github.com/AikoXrayR-Project/XrayR/releases/download/1.4.0.3/AikoXrayR-linux-${arch}.zip
         if [[ $? -ne 0 ]]; then
             echo -e "${red}Tải xuống XrayR thất bại, hãy chắc chắn rằng máy chủ của bạn có thể tải về các tập tin Github${plain}"
             exit 1
@@ -124,15 +124,15 @@ install_XrayR() {
         last_version=$1
         url="https://github.com/AikoXrayR-Project/XrayR/releases/download/1.4.0.3/AikoXrayR-linux-${arch}.zip"
         echo -e "Bắt đầu cài đặt XrayR v$1"
-        wget -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip ${url}
+        wget -N --no-check-certificate -O /usr/local/XrayR/AikoXrayR-linux.zip ${url}
         if [[ $? -ne 0 ]]; then
             echo -e "${red}Tải xuống XrayR v$1 Thất bại, hãy chắc chắn rằng phiên bản này tồn tại${plain}"
             exit 1
         fi
     fi
 
-    unzip XrayR-linux.zip
-    rm XrayR-linux.zip -f
+    unzip AikoXrayR-linux.zip
+    rm AikoXrayR-linux.zip -f
     chmod +x XrayR
     mkdir /etc/XrayR/ -p
     rm /etc/systemd/system/XrayR.service -f
