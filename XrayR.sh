@@ -121,7 +121,7 @@ update() {
 
 config() {
     echo "XrayR sẽ tự động khởi động lại sau khi sửa đổi cấu hình"
-    nano /etc/XrayR/aiko.conf
+    nano /etc/XrayR/aiko.yml
     sleep 2
     check_status
     case $? in

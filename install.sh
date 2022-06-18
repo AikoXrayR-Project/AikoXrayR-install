@@ -146,8 +146,8 @@ install_XrayR() {
     cp geoip.dat /etc/XrayR/
     cp geosite.dat /etc/XrayR/ 
 
-    if [[ ! -f /etc/XrayR/aiko.conf ]]; then
-        cp aiko.conf /etc/XrayR/
+    if [[ ! -f /etc/XrayR/aiko.yml ]]; then
+        cp aiko.yml /etc/XrayR/
         echo -e ""
         echo -e "Cài đặt mới, vui lòng tham khảo hướng dẫn trước：https://github.com/AikoCute/XrayR，Định cấu hình nội dung cần thiết"
     else
